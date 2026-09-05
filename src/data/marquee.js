@@ -1,0 +1,33 @@
+export const marqueeTop = [
+  { text: 'build', cls: '' },
+  { text: '*', cls: 'star' },
+  { text: 'ship', cls: '' },
+  { text: '*', cls: 'star' },
+  { text: 'repeat', cls: 'ghost' },
+  { text: '*', cls: 'star' },
+  { text: 'design <-> code', cls: '' },
+  { text: '*', cls: 'star' },
+  { text: 'front', cls: '' },
+  { text: '*', cls: 'star' },
+  { text: 'back', cls: '' },
+  { text: '*', cls: 'star' },
+  { text: 'infra', cls: 'ghost' },
+  { text: '*', cls: 'star' },
+]
+
+export const marqueeBottom = [
+  { text: 'crie', cls: 'ghost' },
+  { text: '*', cls: 'star' },
+  { text: 'quebre', cls: '' },
+  { text: '*', cls: 'star' },
+  { text: 'repita', cls: 'ghost' },
+  { text: '*', cls: 'star' },
+  { text: 'no uvu', cls: '' },
+  { text: '*', cls: 'star' },
+  { text: 'no climax', cls: 'ghost' },
+  { text: '*', cls: 'star' },
+  { text: 'digital art', cls: '' },
+  { text: '*', cls: 'star' },
+  { text: 'ux bugs free', cls: 'ghost' },
+  { text: '*', cls: 'star' },
+]

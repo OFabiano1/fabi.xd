@@ -1,0 +1,22 @@
+/* ── SKILLS ───────────────────────────────── */
+.skills {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  color: var(--acc-2);
+  border: 1px solid var(--line);
+  padding: 9px 14px;
+  transition: 0.2s ease;
+}
+.skill:hover {
+  border-color: var(--acc);
+  background: rgba(143, 0, 255, 0.08);
+  transform: translateY(-2px);
+}

@@ -1,0 +1,103 @@
+/* ── KEYFRAMES ────────────────────────────── */
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes glitchA {
+  0%,
+  93%,
+  100% {
+    opacity: 0;
+  }
+  94% {
+    opacity: 0.85;
+    clip-path: inset(12% 0 61% 0);
+    transform: translate(-5px, -2px);
+  }
+  96% {
+    opacity: 0.85;
+    clip-path: inset(68% 0 4% 0);
+    transform: translate(4px, 1px);
+  }
+  98% {
+    opacity: 0.85;
+    clip-path: inset(31% 0 33% 0);
+    transform: translate(-2px, 2px);
+  }
+}
+
+@keyframes glitchB {
+  0%,
+  91%,
+  100% {
+    opacity: 0;
+  }
+  92% {
+    opacity: 0.85;
+    clip-path: inset(40% 0 42% 0);
+    transform: translate(5px, 2px);
+  }
+  95% {
+    opacity: 0.85;
+    clip-path: inset(4% 0 82% 0);
+    transform: translate(-4px, -1px);
+  }
+  97% {
+    opacity: 0.85;
+    clip-path: inset(55% 0 18% 0);
+    transform: translate(3px, 1px);
+  }
+}
+
+/* ── GLITCH ───────────────────────────────── */
+.glitch {
+  position: relative;
+  display: inline-block;
+}
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  clip-path: inset(0 0 0 0);
+  pointer-events: none;
+}
+.glitch::before {
+  color: var(--term);
+  opacity: 0.85;
+  animation: glitchA 3.6s infinite steps(1);
+}
+.glitch::after {
+  color: var(--acc);
+  opacity: 0.85;
+  animation: glitchB 3.1s infinite steps(1);
+}
+
+/* ── SCROLL REVEAL ────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+.reveal.in {
+  opacity: 1;
+  transform: none;
+}
+.reveal.d1 {
+  transition-delay: 0.08s;
+}
+.reveal.d2 {
+  transition-delay: 0.16s;
+}
+.reveal.d3 {
+  transition-delay: 0.24s;
+}

@@ -1,0 +1,35 @@
+/* ── FOOTER ───────────────────────────────── */
+footer {
+  border-top: var(--border);
+  padding: 40px 0 52px;
+  text-align: center;
+  background: var(--bg-2);
+}
+
+footer .mono {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  color: var(--dimmer);
+  line-height: 2.4;
+  text-transform: uppercase;
+}
+footer a {
+  color: var(--acc-2);
+  text-decoration: none;
+}
+footer a:hover {
+  color: var(--term);
+}
+
+footer .fox {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(2.2rem, 6vw, 3.4rem);
+  color: var(--txt);
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+}
+footer .fox b {
+  color: var(--acc);
+}

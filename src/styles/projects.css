@@ -1,0 +1,202 @@
+/* ── TRABALHO / PROJETOS ──────────────────── */
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 26px 0;
+  border: var(--border);
+}
+
+.proj {
+  border-right: var(--border);
+  border-bottom: var(--border);
+  background: var(--bg-2);
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  transition: 0.24s ease;
+  position: relative;
+  overflow: hidden;
+}
+.work-grid .proj:nth-child(3n) {
+  border-right: none;
+}
+.work-grid .proj:nth-last-child(-n + 3) {
+  border-bottom: none;
+}
+.proj:hover {
+  background: #100f14;
+}
+.proj:hover .proj-go {
+  color: var(--acc);
+}
+
+.proj-thumb {
+  aspect-ratio: 16/8;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-bottom: var(--border);
+}
+.proj-thumb .tcode {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  color: #080808;
+  position: relative;
+  z-index: 2;
+  font-weight: 700;
+  transition: 0.24s ease;
+}
+.proj-thumb .corner {
+  position: absolute;
+  z-index: 2;
+  color: rgba(255, 255, 255, 0.75);
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.18em;
+}
+.proj-thumb .corner.tl {
+  top: 12px;
+  left: 14px;
+}
+.proj-thumb .corner.br {
+  bottom: 12px;
+  right: 14px;
+}
+.proj-thumb::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(8, 8, 8, 0.25) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(8, 8, 8, 0.25) 1px, transparent 1px);
+  background-size: 18px 18px;
+  opacity: 0.35;
+  transition: 0.24s ease;
+}
+.proj:hover .proj-thumb::after {
+  opacity: 0.12;
+}
+
+/* fundos dos thumbs (por projeto) */
+.proj-thumb.grad-purple {
+  background: linear-gradient(135deg, #8f00ff, #18041f);
+}
+.proj-thumb.grad-teal {
+  background: linear-gradient(135deg, #0e7490, #022c3a);
+}
+.proj-thumb.grad-red {
+  background: linear-gradient(135deg, #7f1d1d, #20020a);
+}
+.proj-thumb.grad-blue {
+  background: linear-gradient(135deg, #1d4ed8, #050b24);
+}
+.proj-thumb.grad-green {
+  background: linear-gradient(135deg, #059669, #022c22);
+}
+.proj-thumb.grad-violet {
+  background: linear-gradient(135deg, #7c3aed, #1e1b4b);
+}
+
+.proj-body {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.proj-id {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
+  color: var(--acc-2);
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.proj-id .n {
+  color: var(--dimmer);
+}
+
+.proj-title {
+  font-size: 1.22rem;
+  font-weight: 600;
+  margin: 12px 0 8px;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.proj-desc {
+  font-size: 0.84rem;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+.proj-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+}
+.proj-tags span {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  color: var(--dimmer);
+  border: 1px solid var(--line);
+  padding: 4px 9px;
+}
+
+.proj-go {
+  margin-top: 20px;
+  padding-top: 14px;
+  border-top: var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+  transition: 0.24s ease;
+}
+
+.work-more {
+  margin-top: 46px;
+  display: flex;
+  justify-content: flex-end;
+}
+.work-more .btn {
+  border-width: 2px;
+}
+
+@media (max-width: 940px) {
+  .work-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .work-grid .proj:nth-child(3n) {
+    border-right: 1px solid var(--line);
+  }
+  .work-grid .proj:nth-child(2n) {
+    border-right: none;
+  }
+  .work-grid .proj:nth-last-child(-n + 3) {
+    border-bottom: 1px solid var(--line);
+  }
+}
+
+@media (max-width: 680px) {
+  .work-grid {
+    grid-template-columns: 1fr;
+  }
+  .work-grid .proj {
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+  }
+  .work-grid .proj:last-child {
+    border-bottom: none;
+  }
+}

@@ -1,0 +1,134 @@
+/* ── RESET / BASE ─────────────────────────── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--txt);
+  font-family: var(--display);
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--acc);
+  color: #080808;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #080808;
+}
+::-webkit-scrollbar-thumb {
+  background: #242424;
+  border: 2px solid #080808;
+  border-radius: 0;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--acc);
+}
+
+/* grain + scanlines (overlays fixos) */
+body::after {
+  content: '';
+  position: fixed;
+  inset: -50%;
+  width: 200%;
+  height: 200%;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  opacity: 0.035;
+  pointer-events: none;
+  z-index: 9998;
+}
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.18) 0 1px, transparent 1px 3px);
+  opacity: 0.18;
+  pointer-events: none;
+  z-index: 9997;
+}
+
+.wrap {
+  max-width: var(--wrap);
+  margin: 0 auto;
+  padding: 0 var(--wrap-pad);
+}
+
+/* ── SEÇÕES / TÍTULOS ─────────────────────── */
+section {
+  padding: var(--section-pad) 0;
+}
+
+.tag {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  color: var(--term);
+  display: block;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+.tag::before {
+  content: '\2014 ';
+}
+
+h2.section-title {
+  font-size: clamp(2.4rem, 6.5vw, 4.4rem);
+  font-weight: 700;
+  line-height: 0.98;
+  letter-spacing: -0.015em;
+  text-transform: uppercase;
+}
+h2.section-title em {
+  font-style: normal;
+  color: var(--acc);
+}
+
+/* ── BOTÕES ───────────────────────────────── */
+.btn {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-decoration: none;
+  padding: 16px 28px;
+  display: inline-block;
+  border: 1px solid transparent;
+  transition: 0.2s ease;
+  cursor: pointer;
+  line-height: 1;
+}
+.btn-solid {
+  background: var(--acc);
+  color: #080808;
+  font-weight: 700;
+}
+.btn-solid:hover {
+  box-shadow: var(--glow);
+  transform: translateY(-2px);
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--txt);
+  border-color: var(--acc);
+}
+.btn-ghost:hover {
+  background: rgba(143, 0, 255, 0.12);
+  box-shadow: var(--glow-soft);
+}
+
+@media (max-width: 680px) {
+  section {
+    padding: var(--section-pad-sm) 0;
+  }
+}

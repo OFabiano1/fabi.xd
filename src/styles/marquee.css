@@ -1,0 +1,29 @@
+/* ── MARQUEE ──────────────────────────────── */
+.marquee {
+  border-top: var(--border);
+  border-bottom: var(--border);
+  overflow: hidden;
+  background: var(--bg-2);
+  padding: 20px 0;
+  white-space: nowrap;
+}
+.marquee-track {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 26s linear infinite;
+}
+.marquee span {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(1.1rem, 3vw, 1.7rem);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--txt);
+  margin: 0 20px;
+}
+.marquee .star {
+  color: var(--acc);
+}
+.marquee .ghost {
+  color: var(--dimmer);
+}

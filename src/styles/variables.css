@@ -1,0 +1,31 @@
+/* ── DESIGN TOKENS ─────────────────────────── */
+:root {
+  --bg: #080808;
+  --bg-2: #0e0e0e;
+  --panel: #0e0e0e;
+  --line: #242424;
+  --txt: #f5f5f5;
+  --muted: #888888;
+  --dimmer: #555555;
+  --acc: #8f00ff;
+  --acc-2: #6a00b8;
+  --term: #3dff8b;
+
+  --display: 'Space Grotesk', system-ui, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, 'Cascadia Code', Consolas, monospace;
+
+  /* espaçamentos */
+  --section-pad: 120px;
+  --section-pad-sm: 84px;
+  --wrap: 1180px;
+  --wrap-pad: 24px;
+  --nav-h: 68px;
+
+  /* bordas */
+  --border: 1px solid var(--line);
+
+  /* sombras padrão */
+  --glow: 0 0 26px rgba(143, 0, 255, 0.55);
+  --glow-soft: 0 0 20px rgba(143, 0, 255, 0.3);
+  --offset-shadow: 8px 8px 0 rgba(143, 0, 255, 0.08);
+}
