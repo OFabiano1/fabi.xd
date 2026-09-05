@@ -1,4 +1,8 @@
-export const spotify = {
+export const now = {
+  discordId: '697615078085754880',
+}
+
+export const fallback = {
   title: 'Blinding Lights',
   artist: 'The Weeknd',
   trackId: '0VjIjW4GlUZAMYd2vXMi3b',
