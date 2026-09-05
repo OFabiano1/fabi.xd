@@ -1,0 +1,113 @@
+/* ── NOW PLAYING ──────────────────────────── */
+.np-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 56px;
+  margin-top: 60px;
+  align-items: start;
+}
+
+.np-player {
+  overflow: hidden;
+  border: var(--border);
+  background: var(--bg-2);
+  box-shadow: var(--offset-shadow);
+}
+.np-head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 18px;
+  border-bottom: var(--border);
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  color: var(--muted);
+}
+.np-status {
+  color: var(--term);
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.np-eq {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 16px;
+  flex-shrink: 0;
+}
+.np-eq i {
+  width: 3px;
+  background: var(--acc);
+  animation: equalize 1s ease-in-out infinite;
+}
+.np-eq i:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.np-eq i:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.np-eq i:nth-child(4) {
+  animation-delay: 0.45s;
+}
+.np-eq i:nth-child(5) {
+  animation-delay: 0.6s;
+}
+
+@keyframes equalize {
+  0%,
+  100% {
+    height: 5px;
+  }
+  50% {
+    height: 16px;
+  }
+}
+
+.np-player iframe {
+  display: block;
+  border: 0;
+  width: 100%;
+}
+.np-open {
+  display: block;
+  padding: 12px 18px;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  color: var(--txt);
+  text-decoration: none;
+  border-top: var(--border);
+}
+.np-open:hover {
+  background: var(--acc);
+  color: #080808;
+}
+
+.np-side p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--muted);
+}
+.np-side b {
+  color: var(--txt);
+}
+.np-side-note {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--dimmer);
+  margin-top: 24px;
+}
+.np-side .hl {
+  color: var(--acc);
+}
+
+@media (max-width: 940px) {
+  .np-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}

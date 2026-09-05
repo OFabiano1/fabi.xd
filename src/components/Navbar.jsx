@@ -3,8 +3,10 @@ import '../styles/navbar.css'
 
 const links = [
   { href: '#home', label: 'HOME' },
-  { href: '#sobre', label: 'SOBRE' },
+  { href: '#sobre', label: 'FABI' },
   { href: '#trabalho', label: 'TRABALHO' },
+  { href: '#musica', label: 'MÚSICA' },
+  { href: '#pc', label: 'PC' },
   { href: '#contato', label: 'CONTATO' },
 ]
 
