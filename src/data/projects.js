@@ -44,12 +44,12 @@ export const projects = [
   {
     id: 'AXT_004',
     code: 'AXOLOTL BR',
-    tag: 'player → player',
-    gradient: 'blue',
-    category: 'COMUNIDADE // PESSOAS',
+    tag: 'sua comunidade na internet',
+    gradient: 'pink',
+    category: 'COMUNIDADE // INTERNET',
     title: 'Axolotl BR',
     description:
-      'A empresa. Comunidade de player para player — Discord, SMP e o hub da galera. O foco principal do rolê.',
+      'Sua comunidade na internet. De player para player* — Discord, SMP e o hub da galera. O foco do rolê.',
     tech: ['DISCORD', 'COMUNIDADE', 'HUB'],
     href: 'https://dsc.gg/axolotlbr',
     cta: 'ENTRAR',
@@ -59,7 +59,7 @@ export const projects = [
     id: 'AXT_005',
     code: 'AXOLOTL SMP',
     tag: 'survival real',
-    gradient: 'green',
+    gradient: 'pink',
     category: 'SERVIDOR // MINECRAFT',
     title: 'Axolotl SMP',
     description:

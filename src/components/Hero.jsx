@@ -9,21 +9,18 @@ export default function Hero() {
         </span>
 
         <div className="hero-title-wrap">
-          <h1 className="hero-title glitch" data-text="FAB!">
+          <h1 className="hero-title">
             FA<span className="slash">/</span>B!<span className="slash">_</span>
           </h1>
           <div className="title-box">
-            internet
-            <br />
-            underground
-            <br />
-            since&nbsp;9000
+            internet <span className="star">*</span> underground{' '}
+            <span className="star">*</span> since&nbsp;9000
           </div>
         </div>
 
         <p className="hero-sub">
-          creative developer &amp; builder&nbsp;&nbsp;<b>·</b>&nbsp;&nbsp;full-stack&nbsp;&nbsp;
-          <b>·</b>&nbsp;&nbsp;design &lt;-&gt; code&nbsp;&nbsp;<b>·</b>&nbsp;&nbsp;cyber-utilitário
+          creative developer &amp; builder&nbsp;&nbsp;<b>*</b>&nbsp;&nbsp;full-stack&nbsp;&nbsp;
+          <b>*</b>&nbsp;&nbsp;design &lt;-&gt; code&nbsp;&nbsp;<b>*</b>&nbsp;&nbsp;cyber-utilitário
         </p>
 
         <div className="terminal">

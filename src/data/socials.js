@@ -2,12 +2,12 @@ export const contactEmail = 'ofabino1.literalmente@gmail.com'
 
 export const socials = [
   {
-    label: 'INSTAGRAM',
-    href: 'https://www.instagram.com/ofabiano1x',
+    label: 'X',
+    href: 'https://x.com/ofabiano1x',
   },
   {
-    label: 'TWITTER / X',
-    href: 'https://x.com/ofabiano1',
+    label: 'INSTAGRAM',
+    href: 'https://www.instagram.com/ofabiano1x',
   },
   {
     label: 'DISCORD',

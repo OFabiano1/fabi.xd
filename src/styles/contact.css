@@ -79,7 +79,7 @@
   font-family: var(--mono);
   font-size: 0.86rem;
   color: var(--term);
-  border-bottom: 1px dashed rgba(61, 255, 139, 0.4);
+  border-bottom: 1px dashed rgba(143, 0, 255, 0.4);
   padding-bottom: 3px;
 }
 .contact-mail:hover {

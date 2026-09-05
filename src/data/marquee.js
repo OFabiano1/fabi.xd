@@ -13,6 +13,12 @@ export const marqueeTop = [
   { text: '*', cls: 'star' },
   { text: 'infra', cls: 'ghost' },
   { text: '*', cls: 'star' },
+  { text: 'ux', cls: '' },
+  { text: '*', cls: 'star' },
+  { text: 'a11y', cls: '' },
+  { text: '*', cls: 'star' },
+  { text: 'obsessão', cls: 'ghost' },
+  { text: '*', cls: 'star' },
 ]
 
 export const marqueeBottom = [
@@ -29,5 +35,11 @@ export const marqueeBottom = [
   { text: 'digital art', cls: '' },
   { text: '*', cls: 'star' },
   { text: 'ux bugs free', cls: 'ghost' },
+  { text: '*', cls: 'star' },
+  { text: 'ship it', cls: '' },
+  { text: '*', cls: 'star' },
+  { text: 'player 2 player', cls: 'ghost' },
+  { text: '*', cls: 'star' },
+  { text: 'sua comunidade', cls: '' },
   { text: '*', cls: 'star' },
 ]

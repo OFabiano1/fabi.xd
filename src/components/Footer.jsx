@@ -5,10 +5,10 @@ export default function Footer() {
     <footer>
       <div className="wrap">
         <div className="fox">
-          FA<b>/</b>B!<b>_</b>
+          FA<b>/</b>B!*<b>_</b>
         </div>
         <div className="mono">
-          feito com &#10084;&#65039; e mau gosto no dark side da web&nbsp;//&nbsp;
+          &#10084;&#65039;&nbsp;//&nbsp;
           <a href="#home">fab!</a>
         </div>
         <div className="mono">
