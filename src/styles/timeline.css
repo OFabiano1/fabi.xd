@@ -1,0 +1,131 @@
+.timeline {
+  list-style: none;
+}
+
+.timeline-row {
+  display: grid;
+  grid-template-columns: 48px 84px 1fr;
+  gap: 18px;
+  position: relative;
+}
+
+.timeline-item {
+  padding-bottom: 4px;
+}
+
+.timeline-axis {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timeline-node {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  background: var(--bg);
+  box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.14);
+  margin-top: 5px;
+}
+
+.timeline-rule {
+  flex: 1;
+  width: 1px;
+  background: linear-gradient(var(--line-strong), var(--line));
+  margin-top: 10px;
+  min-height: 40px;
+}
+
+.timeline-year {
+  padding-top: 2px;
+  font-size: 0.8rem;
+  color: var(--accent);
+}
+
+.timeline-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  backdrop-filter: blur(8px);
+  padding: 18px 20px;
+  margin-bottom: 22px;
+  transition: border-color var(--t-med), transform var(--t-med),
+    box-shadow var(--t-med);
+}
+
+.timeline-card:hover {
+  border-color: var(--line-strong);
+  transform: translateX(4px);
+  box-shadow: var(--shadow-card);
+}
+
+.timeline-card-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.timeline-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.timeline-kind {
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 3px 10px;
+}
+
+.timeline-desc {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: var(--text-soft);
+}
+
+.timeline-stack {
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.timeline-chip {
+  font-size: 0.64rem;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  padding: 3px 9px;
+  border-radius: 6px;
+  background: var(--surface-strong);
+  border: 1px solid var(--line);
+}
+
+@media (max-width: 640px) {
+  .timeline-row {
+    grid-template-columns: 16px 1fr;
+    gap: 14px;
+  }
+
+  .timeline-year {
+    grid-column: 1 / -1;
+    margin-bottom: 6px;
+    text-align: left;
+    grid-row: 1;
+  }
+
+  .timeline-axis {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .timeline-card {
+    grid-column: 2;
+    grid-row: 2;
+  }
+}

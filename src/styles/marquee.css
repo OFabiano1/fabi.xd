@@ -1,29 +1,48 @@
-/* ── MARQUEE ──────────────────────────────── */
 .marquee {
-  border-top: var(--border);
-  border-bottom: var(--border);
   overflow: hidden;
-  background: var(--bg-2);
-  padding: 20px 0;
-  white-space: nowrap;
+  border-block: 1px solid var(--line);
+  padding: 14px 0;
+  user-select: none;
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
 }
+
 .marquee-track {
-  display: inline-block;
-  white-space: nowrap;
-  animation: marquee 26s linear infinite;
+  display: flex;
+  width: max-content;
+  gap: 0;
+  animation: marquee 34s linear infinite;
+  will-change: transform;
 }
-.marquee span {
-  font-family: var(--display);
-  font-weight: 700;
-  font-size: clamp(1.1rem, 3vw, 1.7rem);
-  letter-spacing: 0.06em;
+
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 22px;
+  padding-inline: 11px;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 0.82rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--txt);
-  margin: 0 20px;
+  color: var(--text-soft);
+  white-space: nowrap;
 }
-.marquee .star {
-  color: var(--acc);
+
+.marquee-item.ghost {
+  color: var(--text-muted);
 }
-.marquee .ghost {
-  color: var(--dimmer);
+
+.marquee-star {
+  color: var(--accent);
+  font-size: 0.7rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
 }

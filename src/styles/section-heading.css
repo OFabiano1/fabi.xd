@@ -1,0 +1,40 @@
+.section-head {
+  display: grid;
+  gap: 14px;
+  margin-bottom: clamp(36px, 5vw, 60px);
+}
+
+.section-idx {
+  font-size: 0.6rem;
+  color: var(--text-muted);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  padding: 3px 6px;
+}
+
+.section-tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.section-title {
+  font-size: clamp(1.9rem, 4.2vw, 3rem);
+  max-width: 18ch;
+}
+
+.section-title em {
+  font-style: normal;
+  color: var(--text-muted);
+}
+
+.section-desc {
+  max-width: 52ch;
+  color: var(--text-soft);
+  font-size: 0.98rem;
+}

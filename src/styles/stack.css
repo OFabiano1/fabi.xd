@@ -1,0 +1,92 @@
+.stack-groups {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(20px, 2.6vw, 30px);
+}
+
+.stack-group {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  backdrop-filter: blur(8px);
+  padding: 20px;
+  transition: border-color var(--t-med), transform var(--t-med),
+    box-shadow var(--t-med);
+}
+
+.stack-group:hover {
+  border-color: var(--line-strong);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+}
+
+.stack-group-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 12px;
+  margin-bottom: 14px;
+  border-bottom: 1px dashed var(--line);
+}
+
+.stack-group-title {
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.stack-group-count {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+}
+
+.stack-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.stack-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 9px;
+  border: 1px solid var(--line);
+  background: var(--surface-strong);
+  font-size: 0.76rem;
+  color: var(--text-soft);
+  transition: transform var(--t-fast), border-color var(--t-fast),
+    color var(--t-fast), box-shadow var(--t-fast);
+}
+
+.stack-pill:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+  color: var(--text);
+  box-shadow: 0 6px 24px -12px var(--violet-glow);
+}
+
+.stack-pill-name {
+  letter-spacing: 0.02em;
+}
+
+.stack-pill-mark {
+  color: var(--accent);
+  font-size: 0.7rem;
+}
+
+.stack-hint {
+  margin-top: 22px;
+  text-align: center;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+@media (max-width: 900px) {
+  .stack-groups {
+    grid-template-columns: 1fr;
+  }
+}

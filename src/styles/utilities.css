@@ -1,0 +1,71 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 13px 22px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line-strong);
+  color: var(--text);
+  transition: transform var(--t-fast), border-color var(--t-fast),
+    box-shadow var(--t-fast), background-color var(--t-med), color var(--t-med);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  color: var(--accent-ink);
+  border-color: transparent;
+  box-shadow: 0 10px 32px -12px var(--violet-glow);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 16px 44px -12px var(--violet-glow);
+}
+
+.btn-ghost {
+  background: var(--surface);
+  border-color: var(--line);
+  backdrop-filter: blur(8px);
+}
+
+.btn-ghost:hover {
+  border-color: var(--accent);
+  box-shadow: 0 8px 30px -14px var(--violet-glow);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  color: var(--text-soft);
+  transition: border-color var(--t-fast), color var(--t-fast),
+    background-color var(--t-med);
+}
+
+.badge:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--green);
+  display: inline-block;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
