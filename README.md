@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # fabi.xd
 
 Site pessoal / portfólio do **fabi** — developer & creator.
@@ -55,3 +56,17 @@ Tudo fica em `src/data/`:
 - `stack.ts` — tecnologias exibidas
 - `socials.ts` — redes sociais + e-mail de contato
 - `github.ts` — dados do perfil GitHub (mockados; só trocar mantendo o formato)
+=======
+# fabi.xd
+xddddddddddddddddddddddd
+dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+dddddddddddddddddddddddddddddddddddddddddddddddddddd
+dddddddddddddddddddddddddddddddddd
+kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
+KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
+kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+>>>>>>> fa5be482ff9bdcda0d44250c7b2b187db50068c0
