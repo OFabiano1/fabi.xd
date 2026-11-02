@@ -1,14 +1,15 @@
-import { ArrowDown } from 'lucide-react'
+import { ArrowUpRight } from 'lucide-react'
 import '../styles/hero.css'
 
 const base = import.meta.env.BASE_URL
 
-const codeLines = [
-  'const fabi = {',
-  '  handles: ["code", "design", "music"],',
-  '  status: "online",',
-  '  building: "things on the internet",',
-  '}',
+const into = ['code', 'design', 'music', 'automation', 'experiments']
+
+const socials = [
+  { label: 'GitHub', href: 'https://github.com/OFabiano1' },
+  { label: 'Discord', href: 'https://dsc.gg/axolotlbr' },
+  { label: 'X', href: 'https://x.com/ofabiano1x' },
+  { label: 'YouTube', href: 'https://www.youtube.com' },
 ]
 
 export default function Hero() {
@@ -31,7 +32,7 @@ export default function Hero() {
           <span className="dot r" />
           <span className="dot g" />
           <span className="dot b" />
-          <span className="mono">fabi.xd v5</span>
+          <span className="mono">fabi.xd</span>
           <span className="hero-badge-sep">/</span>
           <span className="hero-badge-on">online</span>
           <span className="hero-badge-dash mono">./things</span>
@@ -41,44 +42,54 @@ export default function Hero() {
           className="hero-title anim-fade-up"
           style={{ '--d': '180ms' } as React.CSSProperties}
         >
-          fabi<span className="hero-dot">.xd</span>
+          hey, i&apos;m fabi<span className="hero-dot">.</span>
         </h1>
 
-        <span className="hero-sticker mono anim-fade-up" style={{ '--d': '260ms' } as React.CSSProperties}>
-          fita nº 05 — papel preto
-        </span>
-
-        <p className="hero-tagline anim-fade-up" style={{ '--d': '300ms' } as React.CSSProperties}>
-          <span className="hero-tag-slash">{"//"}</span>
-          <span className="hero-tag-strong">building things</span> on the internet.
-          <span className="caret" />
+        <p className="hero-tagline anim-fade-up" style={{ '--d': '260ms' } as React.CSSProperties}>
+          <span className="hero-tag-strong">Building things</span> on the internet.
         </p>
 
-        <p className="hero-sub anim-fade-up" style={{ '--d': '420ms' } as React.CSSProperties}>
-          Developer, creator and internet enthusiast. Design &lt;-&gt; code, a little
-          automation, and a lot of curiosity.
+        <p className="hero-sub anim-fade-up" style={{ '--d': '360ms' } as React.CSSProperties}>
+          Developer, creator and curious mind. I explore the intersection of code,
+          design and technology, turning random ideas into projects.
         </p>
 
-        <div className="hero-actions anim-fade-up" style={{ '--d': '540ms' } as React.CSSProperties}>
+        <div className="hero-actions anim-fade-up" style={{ '--d': '480ms' } as React.CSSProperties}>
           <a href="#github" className="btn btn-primary">
-            ver github <ArrowDown size={15} />
+            explore projects <ArrowUpRight size={15} />
           </a>
           <a href="#about" className="btn btn-ghost">
-            sobre mim
+            about me <ArrowUpRight size={15} />
           </a>
         </div>
 
-        <div className="hero-code anim-fade-in" style={{ '--d': '720ms' } as React.CSSProperties}>
-          {codeLines.map((line, i) => (
-            <div key={line} className="hero-code-line">
-              <span className="hero-code-ln mono">{String(i + 1).padStart(2, '0')}</span>
-              <span className="mono">{line}</span>
-            </div>
+        <div className="hero-soc anim-fade-up" style={{ '--d': '560ms' } as React.CSSProperties}>
+          {socials.map((s) => (
+            <a
+              key={s.label}
+              href={s.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hero-soc-link mono"
+              data-cursor
+            >
+              {s.label} <ArrowUpRight size={11} />
+            </a>
           ))}
-          <span className="hero-code-caret" />
         </div>
 
-        <a href="#about" className="hero-scroll mono" aria-label="Rolar para baixo">
+        <div className="hero-into anim-fade-in" style={{ '--d': '680ms' } as React.CSSProperties}>
+          <span className="hero-into-label mono">currently into:</span>
+          <div className="hero-into-chips">
+            {into.map((c) => (
+              <span key={c} className="hero-into-chip mono">
+                {c}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <a href="#about" className="hero-scroll mono" aria-label="Scroll down">
           scroll
           <span className="hero-scroll-line" />
         </a>

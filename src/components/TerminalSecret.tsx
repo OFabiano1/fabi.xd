@@ -96,7 +96,7 @@ export default function TerminalSecret() {
       case 'stack':
         print(
           'out',
-          stack.map((s) => `${s.group.padEnd(12)} ${s.name} (${s.level})`),
+          stack.map((s, i) => `${String(i + 1).padStart(2, '0')}  ${s.name.padEnd(12)} ${s.note}`),
         )
         break
       case 'social':

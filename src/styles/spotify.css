@@ -1,0 +1,219 @@
+.spotify-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: clamp(20px, 3.5vw, 46px);
+  align-items: start;
+}
+
+.spotify-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 18px 20px 20px;
+  border: 1.5px solid var(--line-strong);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  backdrop-filter: blur(8px);
+  box-shadow: var(--shadow-card);
+  transform: rotate(-0.7deg);
+  transition: transform var(--t-med), border-color var(--t-med), box-shadow var(--t-med);
+}
+
+.spotify-card:hover {
+  transform: rotate(0deg) translateY(-4px);
+  border-color: rgba(150, 69, 244, 0.55);
+  box-shadow: var(--glow-soft), 5px 6px 0 rgba(5, 2, 10, 0.55);
+}
+
+.spotify-card-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.spotify-card-bar .mono {
+  margin-left: 6px;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.spotify-card .dot {
+  width: 10px;
+  height: 10px;
+}
+
+.spotify-card .dot.r {
+  background: #f26d6d;
+}
+
+.spotify-card .dot.g {
+  background: #55d47a;
+}
+
+.spotify-card .dot.b {
+  background: #5b9cf5;
+}
+
+.spotify-note {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.spotify-note p {
+  font-size: 0.8rem;
+}
+
+.spotify-open {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  align-self: flex-start;
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1.5px solid var(--line-strong);
+  color: var(--text-soft);
+  font-size: 0.76rem;
+  letter-spacing: 0.06em;
+  transition: color var(--t-fast), border-color var(--t-fast), background var(--t-fast), transform var(--t-fast);
+}
+
+.spotify-open:hover {
+  color: var(--text);
+  border-color: var(--accent);
+  background: rgba(150, 69, 244, 0.12);
+  transform: translateY(-2px) rotate(-0.5deg);
+}
+
+.spotify-hint {
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.spotify-tracks {
+  display: grid;
+  gap: 12px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.spotify-track {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 14px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  transition: transform var(--t-fast), border-color var(--t-fast), background var(--t-fast);
+}
+
+.spotify-track:hover {
+  transform: translateX(4px) rotate(-0.2deg);
+  border-color: rgba(150, 69, 244, 0.45);
+  background: var(--surface-strong);
+}
+
+.spotify-track img,
+.spotify-cover-fallback {
+  flex: none;
+  width: 52px;
+  height: 52px;
+  border-radius: 11px;
+  object-fit: cover;
+}
+
+.spotify-cover-fallback {
+  display: grid;
+  place-items: center;
+  color: var(--accent);
+  background: linear-gradient(140deg, rgba(150, 69, 244, 0.35), rgba(20, 4, 34, 0.8));
+  border: 1px solid rgba(150, 69, 244, 0.4);
+}
+
+.spotify-meta {
+  min-width: 0;
+  flex: 1;
+  display: grid;
+  gap: 2px;
+}
+
+.spotify-track-link {
+  display: grid;
+  gap: 1px;
+  min-width: 0;
+}
+
+.spotify-name {
+  color: var(--text);
+  font-weight: 600;
+  font-size: 0.92rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.spotify-track:hover .spotify-name {
+  color: var(--accent);
+}
+
+.spotify-artist {
+  color: var(--text-soft);
+  font-size: 0.8rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.spotify-album {
+  font-size: 0.64rem;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.spotify-side-b {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  color: var(--text-muted);
+  font-size: 0.7rem;
+}
+
+.spotify-play {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid rgba(150, 69, 244, 0.4);
+  color: var(--accent);
+  transition: background var(--t-fast), color var(--t-fast), transform var(--t-fast);
+}
+
+.spotify-play:hover {
+  background: var(--accent);
+  color: var(--accent-ink);
+  transform: scale(1.08);
+}
+
+@media (max-width: 880px) {
+  .spotify-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .spotify-card {
+    transform: none;
+  }
+}

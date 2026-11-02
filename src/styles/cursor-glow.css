@@ -38,7 +38,7 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  border: 1.5px solid rgba(168, 85, 247, 0.55);
+  border: 1.5px solid rgba(150, 69, 244, 0.55);
   pointer-events: none;
   z-index: 9998;
   will-change: transform;
@@ -56,7 +56,7 @@
 }
 
 [data-theme="light"] .cursor-ring {
-  border-color: rgba(122, 31, 224, 0.55);
+  border-color: rgba(150, 69, 244, 0.55);
 }
 
 /* cursor nativo sai de cena — mas volta onde texto importa */

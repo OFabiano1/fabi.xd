@@ -1,20 +1,19 @@
-import type { StackItem } from '../types'
+export interface StackItem {
+  name: string
+  /** nota de uso — alguma história pequena por trás da linguagem */
+  note: string
+}
 
-export const stackGroups = ['Frontend', 'Backend', 'Tools & Ops'] as const
-
+// As dez linguagens/ferramentas que aparecem na home. Sem grupos, sem score.
 export const stack: StackItem[] = [
-  { name: 'React', group: 'Frontend', level: 'favorite' },
-  { name: 'TypeScript', group: 'Frontend', level: 'favorite' },
-  { name: 'JavaScript', group: 'Frontend', level: 'daily' },
-  { name: 'HTML', group: 'Frontend', level: 'daily' },
-  { name: 'CSS', group: 'Frontend', level: 'daily' },
-  { name: 'Vite', group: 'Frontend', level: 'daily' },
-  { name: 'Python', group: 'Backend', level: 'favorite' },
-  { name: 'Node.js', group: 'Backend', level: 'daily' },
-  { name: 'PostgreSQL', group: 'Backend', level: 'exploring' },
-  { name: 'Discord API', group: 'Backend', level: 'daily' },
-  { name: 'Git', group: 'Tools & Ops', level: 'daily' },
-  { name: 'GitHub', group: 'Tools & Ops', level: 'daily' },
-  { name: 'Docker', group: 'Tools & Ops', level: 'exploring' },
-  { name: 'Linux', group: 'Tools & Ops', level: 'daily' },
+  { name: 'C#', note: 'principal para apps e ferramentas' },
+  { name: 'Kotlin', note: 'desktop e ferramentas pequenas' },
+  { name: 'Python', note: 'bots, automação e scripts rápidos' },
+  { name: 'Elixir', note: 'curiosidade séria de 2026' },
+  { name: 'TypeScript', note: 'a web inteira do fabi.xd' },
+  { name: 'JavaScript', note: 'o dia a dia antes do TS' },
+  { name: 'React', note: 'a base do front' },
+  { name: 'HTML', note: 'estrutura antes de tudo' },
+  { name: 'CSS', note: 'papel preto mora aqui' },
+  { name: 'Git', note: 'história versionada' },
 ]

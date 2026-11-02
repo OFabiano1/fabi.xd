@@ -8,12 +8,12 @@ import '../styles/navbar.css'
 const links = [
   { id: 'home', label: 'Home' },
   { id: 'about', label: 'About' },
-  { id: 'github', label: 'GitHub' },
+  { id: 'experience', label: 'Experience' },
   { id: 'stack', label: 'Stack' },
-  { id: 'contact', label: 'Contact' },
+  { id: 'github', label: 'GitHub' },
 ]
 
-const navLinks = [...links, { id: 'lab', label: 'Lab' }]
+const navLinks = [...links, { id: 'lab', label: 'Lab', href: '#lab' }]
 
 export default function Navbar() {
   const { theme, toggleTheme } = useTheme()
@@ -43,7 +43,7 @@ export default function Navbar() {
             {navLinks.map((link) => (
               <li key={link.id}>
                 <a
-                  href={`#${link.id}`}
+                  href={'href' in link ? link.href : `#${link.id}`}
                   className={active === link.id ? 'active' : ''}
                 >
                   <span className="nav-idx">
@@ -79,8 +79,8 @@ export default function Navbar() {
           >
             {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
           </button>
-          <a href="#contact" className="btn btn-primary nav-cta" onClick={close}>
-            Let&apos;s build
+          <a href="#community" className="btn btn-primary nav-cta" onClick={close}>
+            axolotl br
           </a>
           <button
             className="nav-burger"

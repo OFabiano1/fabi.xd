@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 
-const COLORS = ['#a855f7', '#e04df5', '#ececf6', '#8b2cf5']
+const COLORS = ['#9645f4', '#c26bff', '#ececf6', '#7c2ee0']
 const MAX_PARTICLES = 260
 
 type Particle = {

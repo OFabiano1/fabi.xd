@@ -15,13 +15,13 @@ interface SiteBlock {
 
 const madeOf: SiteBlock[] = [
   {
-    code: '04.1',
+    code: '06.1',
     title: 'O projeto',
     text: 'nascido para concentrar em um lugar só o universo do fabi: código, design, comunidade e experimentos. estética crua e direta — papel preto, tinta roxa, commands secretos no meio.',
     chips: ['bilingue por fora', 'vibe de zine'],
   },
   {
-    code: '04.2',
+    code: '06.2',
     title: 'Como foi feito',
     list: [
       'React 18 + TypeScript + Vite — bundle: ~60kb gzip',
@@ -33,7 +33,7 @@ const madeOf: SiteBlock[] = [
     ],
   },
   {
-    code: '04.3',
+    code: '06.3',
     title: 'Repositório',
     text: 'o código é público. serve de referência pra quem quer montar uma página pessoal com personalidade própria — copia, forka, muda a tinta.',
     repo: 'github.com/OFabiano1',
@@ -46,7 +46,7 @@ export default function EsteSite() {
     <section id="este-site" className="section">
       <div className="wrap">
         <SectionHeading
-          index="04"
+          index="06"
           tag="este site"
           title={
             <>

@@ -29,7 +29,7 @@
 
 .site-card:hover {
   transform: translateY(-5px) rotate(0deg);
-  border-color: rgba(168, 85, 247, 0.5);
+  border-color: rgba(150, 69, 244, 0.5);
   box-shadow: var(--glow-soft), 5px 6px 0 rgba(5, 2, 10, 0.55);
 }
 
@@ -38,7 +38,7 @@
   font-size: 0.7rem;
   letter-spacing: 0.18em;
   color: var(--accent);
-  border: 1px solid rgba(168, 85, 247, 0.35);
+  border: 1px solid rgba(150, 69, 244, 0.35);
   border-radius: 5px;
   padding: 3px 8px;
   transform: rotate(-1deg);
@@ -104,7 +104,7 @@
   gap: 9px;
   padding: 10px 14px;
   border-radius: 999px;
-  border: 1.5px solid rgba(168, 85, 247, 0.4);
+  border: 1.5px solid rgba(150, 69, 244, 0.4);
   color: var(--text-soft);
   font-size: 0.78rem;
   letter-spacing: 0.04em;
@@ -114,7 +114,7 @@
 .site-repo:hover {
   color: var(--text);
   border-color: var(--accent);
-  background: rgba(168, 85, 247, 0.12);
+  background: rgba(150, 69, 244, 0.12);
   transform: translateY(-2px) rotate(-0.5deg);
 }
 

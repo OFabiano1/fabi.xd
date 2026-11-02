@@ -88,23 +88,6 @@
   animation: text-shake 0.45s steps(2) both;
 }
 
-/* sticker de fita — colado no título do papel preto */
-.hero-sticker {
-  margin-top: 16px;
-  display: inline-block;
-  padding: 7px 13px;
-  font-size: 0.66rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--text);
-  border: 1.5px solid var(--text-muted);
-  border-radius: 6px;
-  background: var(--glass);
-  box-shadow: 4px 4px 0 rgba(4, 2, 9, 0.85);
-  transform: rotate(-2.5deg);
-  animation: wiggle 3.4s ease-in-out infinite;
-}
-
 .hero-title .hero-dot {
   font-family: var(--font-mono);
   font-weight: 700;
@@ -143,12 +126,6 @@
   justify-content: center;
 }
 
-.hero-tag-slash {
-  color: var(--text-muted);
-  font-family: var(--font-mono);
-  font-size: 0.85em;
-}
-
 /* giz de cera roxo — the marker underline */
 .hero-tag-strong {
   position: relative;
@@ -163,7 +140,7 @@
   bottom: -0.28em;
   height: 0.34em;
   pointer-events: none;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 12' fill='none'%3E%3Cpath d='M2 8 C 30 2, 55 10, 75 6 S 110 9, 118 5' stroke='%23e04df5' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E")
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 12' fill='none'%3E%3Cpath d='M2 8 C 30 2, 55 10, 75 6 S 110 9, 118 5' stroke='%23c26bff' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E")
     center / 100% 100% no-repeat;
   transform-origin: left center;
   transform: scaleX(0);
@@ -186,44 +163,65 @@
   justify-content: center;
 }
 
-.hero-code {
-  margin-top: clamp(40px, 7vh, 74px);
-  text-align: left;
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: var(--surface);
-  padding: 18px 20px;
-  min-width: min(420px, 88vw);
-  box-shadow: var(--shadow-card);
-}
-
-.hero-code-line {
+/* mini social row */
+.hero-soc {
+  margin-top: 22px;
   display: flex;
-  gap: 16px;
-  white-space: pre;
-  min-height: 22px;
+  gap: 18px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.hero-code-ln {
+.hero-soc-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
   color: var(--text-muted);
-  opacity: 0.6;
-  user-select: none;
+  transition: color var(--t-fast);
 }
 
-.hero-code-line .mono:nth-child(2) {
+.hero-soc-link:hover {
+  color: var(--accent);
+}
+
+/* currently into chips */
+.hero-into {
+  margin-top: clamp(36px, 6vh, 60px);
+  display: grid;
+  gap: 12px;
+  justify-items: center;
+}
+
+.hero-into-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.hero-into-chips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hero-into-chip {
+  padding: 6px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  font-size: 0.72rem;
   color: var(--text-soft);
+  transition: color var(--t-fast), border-color var(--t-fast), transform var(--t-fast);
 }
 
-.hero-code-caret {
-  display: inline-block;
-  width: 7px;
-  height: 15px;
-  margin-left: 6px;
-  vertical-align: text-bottom;
-  background: var(--accent);
-  animation: blink 1.2s step-end infinite;
+.hero-into-chip:hover {
+  color: var(--text);
+  border-color: var(--accent);
+  transform: translateY(-2px);
 }
 
 .hero-scroll {
@@ -267,10 +265,6 @@
     padding-top: calc(var(--nav-h) + 24px);
     padding-bottom: 56px;
     min-height: 92svh;
-  }
-
-  .hero-code {
-    display: none;
   }
 
   .hero-scroll {

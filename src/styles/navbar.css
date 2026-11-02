@@ -109,7 +109,7 @@
 .nav-theme:hover {
   color: var(--accent);
   border-color: var(--accent);
-  box-shadow: 0 0 0 4px rgba(168, 85, 247, 0.14);
+  box-shadow: 0 0 0 4px rgba(150, 69, 244, 0.14);
   transform: translateY(-1px);
 }
 

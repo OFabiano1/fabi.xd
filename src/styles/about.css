@@ -83,9 +83,9 @@
   right: 64px;
   width: 86px;
   height: 22px;
-  background: rgba(224, 77, 245, 0.4);
+  background: rgba(194, 107, 255, 0.4);
   transform: rotate(3deg);
-  border: 1px solid rgba(224, 77, 245, 0.35);
+  border: 1px solid rgba(194, 107, 255, 0.35);
   border-radius: 2px;
   backdrop-filter: blur(2px);
   z-index: 2;
@@ -94,7 +94,7 @@
 .about-item:hover .about-item-dot,
 .about-card:hover {
   transform: rotate(0deg) translateY(-4px);
-  border-color: rgba(168, 85, 247, 0.5);
+  border-color: rgba(150, 69, 244, 0.5);
 }
 
 .about-card:hover {
@@ -161,7 +161,7 @@
   pointer-events: none;
   background: linear-gradient(
     165deg,
-    rgba(168, 85, 247, 0.18),
+    rgba(150, 69, 244, 0.18),
     transparent 45%,
     rgba(20, 2, 32, 0.35) 92%
   );
@@ -179,7 +179,7 @@
   backdrop-filter: blur(6px);
   padding: 6px 11px;
   border-radius: 999px;
-  border: 1px solid rgba(168, 85, 247, 0.35);
+  border: 1px solid rgba(150, 69, 244, 0.35);
 }
 
 .about-card-body {

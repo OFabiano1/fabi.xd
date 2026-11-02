@@ -25,13 +25,13 @@
   max-height: min(64vh, 560px);
   display: flex;
   flex-direction: column;
-  border: 1px solid rgba(168, 85, 247, 0.4);
+  border: 1px solid rgba(150, 69, 244, 0.4);
   border-radius: var(--radius);
   background: rgba(8, 4, 14, 0.96);
   box-shadow:
-    0 0 0 1px rgba(168, 85, 247, 0.15),
+    0 0 0 1px rgba(150, 69, 244, 0.15),
     0 30px 90px -20px rgba(90, 20, 180, 0.45),
-    inset 0 1px 0 rgba(168, 85, 247, 0.12);
+    inset 0 1px 0 rgba(150, 69, 244, 0.12);
   overflow: hidden;
 }
 
@@ -93,8 +93,8 @@
   align-items: center;
   gap: 10px;
   padding: 12px 18px 14px;
-  border-top: 1px solid rgba(168, 85, 247, 0.22);
-  background: rgba(168, 85, 247, 0.05);
+  border-top: 1px solid rgba(150, 69, 244, 0.22);
+  background: rgba(150, 69, 244, 0.05);
 }
 
 .terminal-prompt {

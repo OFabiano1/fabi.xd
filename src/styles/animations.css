@@ -171,7 +171,6 @@ body.chaos .nav {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-sticker,
   .hero-title:hover,
   .marquee-track {
     animation: none !important;

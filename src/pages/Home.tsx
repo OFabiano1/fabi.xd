@@ -1,11 +1,12 @@
 import Marquee from '../components/Marquee.tsx'
 import Hero from '../sections/Hero.tsx'
 import About from '../sections/About.tsx'
-import GitHubSection from '../sections/GitHubSection.tsx'
+import Experience from '../sections/Experience.tsx'
 import Stack from '../sections/Stack.tsx'
+import Spotify from '../sections/Spotify.tsx'
+import GitHubSection from '../sections/GitHubSection.tsx'
 import EsteSite from '../sections/EsteSite.tsx'
-import Links from '../sections/Links.tsx'
-import Contact from '../sections/Contact.tsx'
+import Community from '../sections/Community.tsx'
 import { marqueeTop, marqueeBottom } from '../data/marquee.ts'
 
 export default function Home() {
@@ -14,12 +15,13 @@ export default function Home() {
       <Hero />
       <Marquee items={marqueeTop} />
       <About />
-      <GitHubSection />
+      <Experience />
       <Stack />
-      <Marquee items={marqueeBottom} />
+      <Spotify />
+      <GitHubSection />
       <EsteSite />
-      <Links />
-      <Contact />
+      <Marquee items={marqueeBottom} />
+      <Community />
     </main>
   )
 }

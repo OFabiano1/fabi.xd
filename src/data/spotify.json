@@ -1,0 +1,30 @@
+{
+  "isMocked": true,
+  "updated": 0,
+  "tracks": [
+    {
+      "name": "Kiss Land",
+      "artist": "The Weeknd",
+      "album": "Kiss Land",
+      "image": "",
+      "url": "https://open.spotify.com/",
+      "playedAt": 0
+    },
+    {
+      "name": "XP",
+      "artist": "Nego do Borel",
+      "album": "XP",
+      "image": "",
+      "url": "https://open.spotify.com/",
+      "playedAt": 0
+    },
+    {
+      "name": "Cadê o Martelo?",
+      "artist": "Teto",
+      "album": "Caos Massivo",
+      "image": "",
+      "url": "https://open.spotify.com/",
+      "playedAt": 0
+    }
+  ]
+}

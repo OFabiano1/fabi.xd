@@ -103,7 +103,7 @@ export default function Pong() {
       ctx.fillStyle = '#05020a'
       ctx.fillRect(0, 0, W, H)
 
-      ctx.strokeStyle = 'rgba(168, 85, 247, 0.28)'
+      ctx.strokeStyle = 'rgba(150, 69, 244, 0.28)'
       ctx.setLineDash([10, 12])
       ctx.beginPath()
       ctx.moveTo(W / 2, 0)
@@ -111,11 +111,11 @@ export default function Pong() {
       ctx.stroke()
       ctx.setLineDash([])
 
-      ctx.strokeStyle = 'rgba(168, 85, 247, 0.2)'
+      ctx.strokeStyle = 'rgba(150, 69, 244, 0.2)'
       ctx.strokeRect(0.5, 0.5, W - 1, H - 1)
 
-      ctx.fillStyle = '#a855f7'
-      ctx.shadowColor = 'rgba(168, 85, 247, 0.7)'
+      ctx.fillStyle = '#9645f4'
+      ctx.shadowColor = 'rgba(150, 69, 244, 0.7)'
       ctx.shadowBlur = 18
       ctx.fillRect(20, p1.y, PADDLE_W, PADDLE_H)
       ctx.fillRect(W - 30, p2.y, PADDLE_W, PADDLE_H)
@@ -130,7 +130,7 @@ export default function Pong() {
       ctx.fillStyle = 'rgba(236, 236, 246, 0.9)'
       ctx.textAlign = 'center'
       ctx.fillText(String(sc[0]), W / 2 - 46, 62)
-      ctx.fillStyle = 'rgba(168, 85, 247, 0.75)'
+      ctx.fillStyle = 'rgba(150, 69, 244, 0.75)'
       ctx.fillText(String(sc[1]), W / 2 + 46, 62)
     }
 

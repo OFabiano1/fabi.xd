@@ -1,92 +1,60 @@
-.stack-groups {
+/* Stack — lista flat, divisórias discretas, hover marca-texto. */
+.stack-flat {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: clamp(20px, 2.6vw, 30px);
+  border-top: 1px solid var(--line);
 }
 
-.stack-group {
-  border: 1px solid var(--line);
-  border-radius: var(--radius-lg);
-  background: var(--surface);
-  backdrop-filter: blur(8px);
-  padding: 20px;
-  transition: border-color var(--t-med), transform var(--t-med),
-    box-shadow var(--t-med);
+.stack-cell {
+  display: grid;
+  grid-template-columns: 3.2rem 1fr auto;
+  align-items: baseline;
+  gap: 18px;
+  padding: 16px 10px;
+  border-bottom: 1px solid var(--line);
+  transition: background var(--t-fast), padding-left var(--t-fast);
 }
 
-.stack-group:hover {
-  border-color: var(--line-strong);
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-card);
-}
-
-.stack-group-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-bottom: 12px;
-  margin-bottom: 14px;
-  border-bottom: 1px dashed var(--line);
-}
-
-.stack-group-title {
-  font-size: 0.8rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--text);
-}
-
-.stack-group-count {
-  font-size: 0.68rem;
-  color: var(--text-muted);
-}
-
-.stack-pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.stack-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 12px;
-  border-radius: 9px;
-  border: 1px solid var(--line);
+.stack-cell:hover {
   background: var(--surface-strong);
-  font-size: 0.76rem;
-  color: var(--text-soft);
-  transition: transform var(--t-fast), border-color var(--t-fast),
-    color var(--t-fast), box-shadow var(--t-fast);
+  padding-left: 16px;
 }
 
-.stack-pill:hover {
-  transform: translateY(-2px);
-  border-color: var(--accent);
-  color: var(--text);
-  box-shadow: 0 6px 24px -12px var(--violet-glow);
-}
-
-.stack-pill-name {
-  letter-spacing: 0.02em;
-}
-
-.stack-pill-mark {
-  color: var(--accent);
+.stack-cell-idx {
   font-size: 0.7rem;
-}
-
-.stack-hint {
-  margin-top: 22px;
-  text-align: center;
-  font-size: 0.72rem;
-  letter-spacing: 0.1em;
   color: var(--text-muted);
+  opacity: 0.7;
 }
 
-@media (max-width: 900px) {
-  .stack-groups {
-    grid-template-columns: 1fr;
+.stack-cell-name {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 2.6vw, 1.7rem);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  transition: color var(--t-fast);
+}
+
+.stack-cell:hover .stack-cell-name {
+  color: var(--accent);
+}
+
+.stack-cell-note {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  text-align: right;
+}
+
+@media (max-width: 640px) {
+  .stack-cell {
+    grid-template-columns: 2.4rem 1fr;
+    row-gap: 4px;
+  }
+
+  .stack-cell-note {
+    grid-column: 2;
+    text-align: left;
   }
 }

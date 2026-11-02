@@ -14,15 +14,15 @@
   --text-soft: #b9b9cc;
   --text-muted: #84849b;
 
-  --accent: #a855f7;
-  --accent-strong: #8b2cf5;
+  --accent: #9645f4;
+  --accent-strong: #7c2ee0;
   --accent-ink: #170224;
-  --accent-2: #e04df5;
-  --violet-glow: rgba(150, 65, 255, 0.5);
+  --accent-2: #c26bff;
+  --violet-glow: rgba(150, 69, 244, 0.5);
   --green: #6ee7a0;
 
-  --font-display: "Space Grotesk", system-ui, -apple-system, sans-serif;
-  --font-brutal: "Unbounded", "Space Grotesk", system-ui, sans-serif;
+  --font-display: "Inter", system-ui, -apple-system, sans-serif;
+  --font-brutal: "Inter", system-ui, -apple-system, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, "Cascadia Code", monospace;
 
   --radius: 14px;
@@ -33,7 +33,7 @@
   --wrap: 1120px;
 
   --shadow-card: 0 18px 50px -22px rgba(0, 0, 0, 0.75);
-  --glow-soft: 0 0 0 1px rgba(150, 65, 255, 0.3), 0 12px 40px -14px rgba(150, 65, 255, 0.5);
+  --glow-soft: 0 0 0 1px rgba(150, 69, 244, 0.3), 0 12px 40px -14px rgba(150, 69, 244, 0.5);
 
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --t-fast: 0.18s var(--ease);
@@ -57,13 +57,13 @@
   --text-soft: #4a4a60;
   --text-muted: #7a7a92;
 
-  --accent: #7a1fe0;
+  --accent: #9645f4;
   --accent-strong: #6514c2;
   --accent-ink: #ffffff;
   --accent-2: #b517f2;
-  --violet-glow: rgba(122, 31, 224, 0.22);
+  --violet-glow: rgba(150, 69, 244, 0.24);
   --green: #059669;
 
   --shadow-card: 0 20px 46px -28px rgba(60, 40, 120, 0.32);
-  --glow-soft: 0 0 0 1px rgba(122, 31, 224, 0.2), 0 14px 36px -18px rgba(122, 31, 224, 0.34);
+  --glow-soft: 0 0 0 1px rgba(150, 69, 244, 0.2), 0 14px 36px -18px rgba(150, 69, 244, 0.34);
 }
