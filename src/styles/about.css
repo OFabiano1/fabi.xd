@@ -63,20 +63,38 @@
 }
 
 .about-card {
-  border: 1px solid var(--line);
+  border: 1.5px solid var(--line-strong);
   border-radius: var(--radius-lg);
   background: var(--surface);
   backdrop-filter: blur(8px);
   box-shadow: var(--shadow-card);
   overflow: hidden;
+  transform: rotate(-0.6deg);
   transition: transform var(--t-med), border-color var(--t-med),
     box-shadow var(--t-med);
+  position: relative;
+}
+
+/* fita adesiva colando o card no papel preto */
+.about-card::before {
+  content: "";
+  position: absolute;
+  top: -9px;
+  right: 64px;
+  width: 86px;
+  height: 22px;
+  background: rgba(224, 77, 245, 0.4);
+  transform: rotate(3deg);
+  border: 1px solid rgba(224, 77, 245, 0.35);
+  border-radius: 2px;
+  backdrop-filter: blur(2px);
+  z-index: 2;
 }
 
 .about-item:hover .about-item-dot,
 .about-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--line-strong);
+  transform: rotate(0deg) translateY(-4px);
+  border-color: rgba(168, 85, 247, 0.5);
 }
 
 .about-card:hover {
@@ -112,6 +130,54 @@
   margin-left: 8px;
   font-size: 0.72rem;
   color: var(--text-muted);
+}
+
+/* foto de perfil — aaaaa.jpg */
+.about-portrait {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+}
+
+.about-portrait img {
+  width: 100%;
+  height: clamp(220px, 26vw, 300px);
+  object-fit: cover;
+  object-position: 50% 28%;
+  filter: saturate(1.08);
+  transition: transform var(--t-slow);
+  display: block;
+}
+
+.about-card:hover .about-portrait img {
+  transform: scale(1.035);
+}
+
+.about-portrait-tint {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    165deg,
+    rgba(168, 85, 247, 0.18),
+    transparent 45%,
+    rgba(20, 2, 32, 0.35) 92%
+  );
+  mix-blend-mode: multiply;
+}
+
+.about-portrait-tag {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  color: var(--text);
+  background: rgba(6, 3, 12, 0.62);
+  backdrop-filter: blur(6px);
+  padding: 6px 11px;
+  border-radius: 999px;
+  border: 1px solid rgba(168, 85, 247, 0.35);
 }
 
 .about-card-body {

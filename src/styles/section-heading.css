@@ -4,12 +4,47 @@
   margin-bottom: clamp(36px, 5vw, 60px);
 }
 
-.section-idx {
-  font-size: 0.6rem;
+.section-title {
+  font-size: clamp(1.9rem, 4.2vw, 3rem);
+  max-width: 18ch;
+}
+
+.section-title em {
+  position: relative;
+  font-style: normal;
   color: var(--text-muted);
-  border: 1px solid var(--line);
+  z-index: 0;
+}
+
+/* marca-texto roxo em cima da palavra */
+.section-title em::after {
+  content: "";
+  position: absolute;
+  left: -0.12em;
+  right: -0.1em;
+  top: 0.42em;
+  bottom: -0.06em;
+  z-index: -1;
+  background: linear-gradient(100deg, rgba(224, 77, 245, 0.55), rgba(168, 85, 247, 0.45));
+  border-radius: 3px;
+  transform: skew(-6deg) rotate(-1deg);
+  opacity: 0.85;
+}
+
+.section-idx {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--accent);
+  border: 1px solid rgba(168, 85, 247, 0.4);
   border-radius: 5px;
   padding: 3px 6px;
+  transform: rotate(-1.5deg);
+  transition: transform var(--t-fast), background var(--t-fast);
+}
+
+.section-idx:hover {
+  transform: rotate(1.5deg) scale(1.08);
+  background: rgba(168, 85, 247, 0.12);
 }
 
 .section-tag {
@@ -21,16 +56,6 @@
   display: inline-flex;
   align-items: center;
   gap: 12px;
-}
-
-.section-title {
-  font-size: clamp(1.9rem, 4.2vw, 3rem);
-  max-width: 18ch;
-}
-
-.section-title em {
-  font-style: normal;
-  color: var(--text-muted);
 }
 
 .section-desc {

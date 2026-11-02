@@ -12,6 +12,8 @@ const links = [
   { id: 'contact', label: 'Contact' },
 ]
 
+const navLinks = [...links, { id: 'lab', label: 'Lab' }]
+
 export default function Navbar() {
   const { theme, toggleTheme } = useTheme()
   const [open, setOpen] = useState(false)
@@ -36,14 +38,14 @@ export default function Navbar() {
 
         <nav className="nav-menu">
           <ul>
-            {links.map((link) => (
+            {navLinks.map((link) => (
               <li key={link.id}>
                 <a
                   href={`#${link.id}`}
                   className={active === link.id ? 'active' : ''}
                 >
                   <span className="nav-idx">
-                    {String(links.indexOf(link) + 1).padStart(2, '0')}
+                    {String(navLinks.indexOf(link) + 1).padStart(2, '0')}
                   </span>
                   {link.label}
                 </a>

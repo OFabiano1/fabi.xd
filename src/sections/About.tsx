@@ -58,6 +58,18 @@ export default function About() {
               <span className="about-card-dot b" />
               <span className="mono">fabi.config.ts</span>
             </div>
+
+            <figure className="about-portrait">
+              <img
+                src={`${import.meta.env.BASE_URL}assets/perfil.jpg`}
+                alt="Foto de perfil do fabi — retrato de tinta roxa"
+                loading="lazy"
+              />
+              <div className="about-portrait-tint" aria-hidden="true" />
+              <figcaption className="about-portrait-tag mono">
+                foto de perfil · @ofabiano1x
+              </figcaption>
+            </figure>
             <div className="about-card-body mono">
               <div>
                 <span className="kw">const</span> <span className="fn">fabi</span> ={' '}

@@ -17,6 +17,31 @@
   gap: 16px;
 }
 
+.footer-hint {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  color: var(--text-muted);
+  opacity: 0.65;
+}
+
+.footer-terminal {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  transition: color var(--t-fast), border-color var(--t-fast), background var(--t-fast);
+}
+
+.footer-terminal:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: rgba(168, 85, 247, 0.1);
+}
+
 .footer-logo {
   font-family: var(--font-mono);
   font-weight: 700;

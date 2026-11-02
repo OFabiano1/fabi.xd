@@ -1,6 +1,8 @@
 import { ArrowDown } from 'lucide-react'
 import '../styles/hero.css'
 
+const base = import.meta.env.BASE_URL
+
 const codeLines = [
   'const fabi = {',
   '  handles: ["code", "design", "music"],',
@@ -12,10 +14,23 @@ const codeLines = [
 export default function Hero() {
   return (
     <section id="home" className="hero">
+      <div className="hero-media" aria-hidden="true">
+        <video
+          src={`${base}assets/papelpreto.mp4`}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+        />
+        <div className="hero-media-veil" />
+      </div>
       <div className="hero-grid-bg" aria-hidden="true" />
       <div className="wrap hero-inner">
         <div className="hero-badge anim-fade-up" style={{ '--d': '80ms' } as React.CSSProperties}>
-          <span className="dot" />
+          <span className="dot r" />
+          <span className="dot g" />
+          <span className="dot b" />
           <span className="mono">fabi.xd v5</span>
           <span className="hero-badge-sep">/</span>
           <span className="hero-badge-on">online</span>
@@ -28,6 +43,10 @@ export default function Hero() {
         >
           fabi<span className="hero-dot">.xd</span>
         </h1>
+
+        <span className="hero-sticker mono anim-fade-up" style={{ '--d': '260ms' } as React.CSSProperties}>
+          fita nº 05 — papel preto
+        </span>
 
         <p className="hero-tagline anim-fade-up" style={{ '--d': '300ms' } as React.CSSProperties}>
           <span className="hero-tag-slash">{"//"}</span>

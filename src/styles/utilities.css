@@ -9,7 +9,7 @@
   letter-spacing: 0.08em;
   padding: 13px 22px;
   border-radius: var(--radius-sm);
-  border: 1px solid var(--line-strong);
+  border: 1.5px solid var(--line-strong);
   color: var(--text);
   transition: transform var(--t-fast), border-color var(--t-fast),
     box-shadow var(--t-fast), background-color var(--t-med), color var(--t-med);
@@ -19,26 +19,38 @@
   transform: translateY(-2px);
 }
 
+.btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
 .btn-primary {
   background: linear-gradient(135deg, var(--accent), var(--accent-strong));
   color: var(--accent-ink);
-  border-color: transparent;
-  box-shadow: 0 10px 32px -12px var(--violet-glow);
+  border-color: var(--accent-strong);
+  box-shadow: 5px 5px 0 rgba(5, 2, 10, 0.9), 0 10px 32px -12px var(--violet-glow);
 }
 
 .btn-primary:hover {
-  box-shadow: 0 16px 44px -12px var(--violet-glow);
+  box-shadow: 6px 7px 0 rgba(5, 2, 10, 0.9), 0 18px 44px -12px var(--violet-glow);
+}
+
+.btn-primary:active {
+  box-shadow: 1px 1px 0 rgba(5, 2, 10, 0.9);
 }
 
 .btn-ghost {
   background: var(--surface);
-  border-color: var(--line);
+  border-color: var(--line-strong);
+  border-style: dashed;
   backdrop-filter: blur(8px);
 }
 
 .btn-ghost:hover {
+  border-style: solid;
   border-color: var(--accent);
-  box-shadow: 0 8px 30px -14px var(--violet-glow);
+  color: var(--accent);
+  box-shadow: 4px 4px 0 rgba(5, 2, 10, 0.5);
+  transform: rotate(-0.5deg) translateY(-2px);
 }
 
 .badge {

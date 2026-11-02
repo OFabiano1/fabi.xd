@@ -35,7 +35,7 @@ body::before {
   background:
     radial-gradient(60% 46% at 50% -6%, var(--violet-glow), transparent 68%),
     transparent;
-  opacity: 0.5;
+  opacity: 0.6;
 }
 
 ::selection {

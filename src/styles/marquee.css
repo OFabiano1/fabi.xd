@@ -32,13 +32,32 @@
   white-space: nowrap;
 }
 
-.marquee-item.ghost {
+/* ciclo de cor — roxo, fucsia, roxo forte, mudo */
+.marquee-item:nth-child(4n + 1) {
+  color: var(--text-soft);
+}
+.marquee-item:nth-child(4n + 2) {
+  color: var(--accent);
+}
+.marquee-item:nth-child(4n + 3) {
+  color: var(--accent-2);
+}
+.marquee-item:nth-child(4n + 4) {
   color: var(--text-muted);
 }
 
+.marquee-item.ghost {
+  color: var(--text-muted);
+  opacity: 0.75;
+}
+
 .marquee-star {
-  color: var(--accent);
+  color: var(--accent-2);
   font-size: 0.7rem;
+}
+
+.marquee-item:nth-child(2n) .marquee-star {
+  color: var(--accent);
 }
 
 @media (prefers-reduced-motion: reduce) {

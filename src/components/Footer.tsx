@@ -1,8 +1,12 @@
-import { Github } from 'lucide-react'
+import { Github, Terminal } from 'lucide-react'
 import '../styles/footer.css'
 
 export default function Footer() {
   const year = new Date().getFullYear()
+
+  const openTerminal = () => {
+    window.dispatchEvent(new CustomEvent('fabi:terminal:open'))
+  }
 
   return (
     <footer className="footer">
@@ -12,11 +16,24 @@ export default function Footer() {
             fabi<span>.xd</span>
           </span>
           <span className="footer-note">built with curiosity &amp; caffeine.</span>
+          <span className="footer-hint mono">
+            existe mais aqui do que parece — ctrl + ` abre o terminal
+          </span>
         </div>
 
         <div className="footer-links">
           <a href="#home">top</a>
           <span className="footer-sep">/</span>
+          <a href="#lab">lab</a>
+          <button
+            className="footer-terminal"
+            onClick={openTerminal}
+            aria-label="Abrir terminal secreto (Ctrl + `)"
+            data-cursor
+          >
+            <Terminal size={15} />
+            <span className="mono">&gt;_</span>
+          </button>
           <a href="mailto:ofabino1.literalmente@gmail.com">email</a>
           <a
             href="https://github.com/OFabiano1"
