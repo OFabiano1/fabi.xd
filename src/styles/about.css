@@ -137,6 +137,7 @@
   position: relative;
   overflow: hidden;
   border-bottom: 1px solid var(--line);
+  cursor: pointer;
 }
 
 .about-portrait img {
@@ -145,8 +146,9 @@
   object-fit: cover;
   object-position: 50% 28%;
   filter: saturate(1.08);
-  transition: transform var(--t-slow);
+  transition: transform 0.9s var(--ease);
   display: block;
+  will-change: transform;
 }
 
 .about-card:hover .about-portrait img {

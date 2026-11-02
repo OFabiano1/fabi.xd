@@ -18,15 +18,6 @@ export interface Project {
   }
 }
 
-export interface TimelineItem {
-  year: string
-  title: string
-  kind: string
-  description: string
-  stack: string[]
-  status?: ProjectStatus
-}
-
 export interface StackItem {
   name: string
   group: string

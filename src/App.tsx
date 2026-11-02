@@ -6,6 +6,7 @@ import CursorGlow from './components/CursorGlow.tsx'
 import TerminalSecret from './components/TerminalSecret.tsx'
 import SecretRoom from './components/SecretRoom.tsx'
 import Home from './pages/Home.tsx'
+import SoundFeedback from './components/SoundFeedback.tsx'
 
 const Lab = lazy(() => import('./components/Lab.tsx'))
 
@@ -13,6 +14,7 @@ export default function App() {
   return (
     <ThemeProvider>
       <CursorGlow />
+      <SoundFeedback />
       <Navbar />
       <Home />
       <Footer />

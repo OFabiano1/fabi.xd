@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
-import { Menu, Moon, Sun, X } from 'lucide-react'
+import { Menu, Moon, Sun, Volume2, VolumeX, X } from 'lucide-react'
 import { useTheme } from '../hooks/useTheme.tsx'
 import { useScrollSpy } from '../hooks/useScrollSpy.ts'
+import { soundEnabled, setSoundEnabled, play } from '../lib/sounds.ts'
 import '../styles/navbar.css'
 
 const links = [
@@ -18,6 +19,7 @@ export default function Navbar() {
   const { theme, toggleTheme } = useTheme()
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [sound, setSound] = useState(() => soundEnabled())
   const active = useScrollSpy(links.map((l) => l.id))
 
   useEffect(() => {
@@ -55,6 +57,19 @@ export default function Navbar() {
         </nav>
 
         <div className="nav-actions">
+          <button
+            className="nav-sound"
+            onClick={() => {
+              const next = !sound
+              setSoundEnabled(next)
+              setSound(next)
+              if (next) play('blip')
+            }}
+            aria-label={sound ? 'Desligar som do site' : 'Ligar som do site'}
+            title="som do site"
+          >
+            {sound ? <Volume2 size={16} /> : <VolumeX size={16} />}
+          </button>
           <button
             className="nav-theme"
             onClick={toggleTheme}

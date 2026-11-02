@@ -114,6 +114,26 @@
   }
 }
 
+/* caos — 8 segundos de bug benigno (terminal: caos) */
+body.chaos main,
+body.chaos .nav {
+  animation: chaos-storm 0.32s steps(3) infinite;
+  filter: contrast(1.12) saturate(1.35);
+}
+
+@keyframes chaos-storm {
+  0%,
+  100% {
+    transform: none;
+  }
+  33% {
+    transform: skewX(-1.2deg) translateX(3px);
+  }
+  66% {
+    transform: skewX(1.1deg) translateX(-3px);
+  }
+}
+
 @keyframes float-soft {
   0%,
   100% {

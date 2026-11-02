@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { projects } from '../data/projects.ts'
 import { stack } from '../data/stack.ts'
 import { socials, contactEmail } from '../data/socials.ts'
+import { soundEnabled, setSoundEnabled, play } from '../lib/sounds.ts'
 import '../styles/terminal.css'
 
 /** Abrir o terminal de fora: footer sectarian ou evento fabi:terminal:open. */
@@ -68,8 +69,10 @@ export default function TerminalSecret() {
           'stack       — ferramentas do dia a dia',
           'social      — onde me achar (' + contactEmail + ')',
           'tema        — alterna dark / light',
+          'som         — liga / desliga o som do site',
           'lab         — abre o lab (partículas · pong · objeto 3d)',
           'sala        — a sala secreta (dica: ctrl + alt + shift + w)',
+          'caos        — não me pergunte, digite',
           'clear       — limpa a tela',
           'exit        — fecha o terminal',
         ])
@@ -106,6 +109,18 @@ export default function TerminalSecret() {
         print('sys', `tema → ${next}`)
         break
       }
+      case 'som': {
+        const next = !soundEnabled()
+        setSoundEnabled(next)
+        if (next) play('blip')
+        print('sys', `som → ${next ? 'ligado' : 'desligado'}`)
+        break
+      }
+      case 'caos':
+        print('sys', 'o caos chegou — 8 segundos de bug benigno.')
+        document.body.classList.add('chaos')
+        window.setTimeout(() => document.body.classList.remove('chaos'), 8000)
+        break
       case 'lab':
         close()
         window.location.hash = '#lab'

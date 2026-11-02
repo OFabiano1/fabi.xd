@@ -11,7 +11,7 @@ export default function Stack() {
     <section id="stack" className="section">
       <div className="wrap">
         <SectionHeading
-          index="03"
+          index="04"
           tag="stack"
           title={
             <>

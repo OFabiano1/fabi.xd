@@ -22,7 +22,7 @@ export default function Projects() {
     <section id="work" className="section">
       <div className="wrap">
         <SectionHeading
-          index="02"
+          index="03"
           tag="selected projects"
           title={
             <>

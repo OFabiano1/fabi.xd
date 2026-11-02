@@ -1,5 +1,7 @@
+import { useState } from 'react'
 import Reveal from '../components/Reveal.tsx'
 import SectionHeading from '../components/SectionHeading.tsx'
+import { play } from '../lib/sounds.ts'
 import '../styles/about.css'
 
 const indicators = [
@@ -11,6 +13,8 @@ const indicators = [
 ]
 
 export default function About() {
+  const [spin, setSpin] = useState(0)
+
   return (
     <section id="about" className="section">
       <div className="wrap">
@@ -59,15 +63,23 @@ export default function About() {
               <span className="mono">fabi.config.ts</span>
             </div>
 
-            <figure className="about-portrait">
+            <figure
+              className="about-portrait"
+              onClick={() => {
+                setSpin((s) => s + 360)
+                play('tap')
+              }}
+              data-cursor
+            >
               <img
                 src={`${import.meta.env.BASE_URL}assets/perfil.jpg`}
                 alt="Foto de perfil do fabi — retrato de tinta roxa"
                 loading="lazy"
+                style={{ transform: `rotate(${spin}deg)` }}
               />
               <div className="about-portrait-tint" aria-hidden="true" />
               <figcaption className="about-portrait-tag mono">
-                foto de perfil · @ofabiano1x
+                foto de perfil · @ofabiano1x · clica que ela gira
               </figcaption>
             </figure>
             <div className="about-card-body mono">

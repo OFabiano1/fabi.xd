@@ -17,7 +17,7 @@ export default function GitHubSection() {
     <section id="github" className="section">
       <div className="wrap">
         <SectionHeading
-          index="05"
+          index="02"
           tag="github"
           title={
             <>

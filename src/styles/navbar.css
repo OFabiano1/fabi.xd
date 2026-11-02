@@ -88,22 +88,28 @@
   gap: 12px;
 }
 
-.nav-theme {
+.nav-sound {
   width: 36px;
   height: 36px;
   display: grid;
   place-items: center;
   border-radius: 10px;
-  border: 1px solid var(--line);
-  color: var(--text-soft);
+  border: 1px dashed var(--line-strong);
+  color: var(--text-muted);
   transition: color var(--t-fast), border-color var(--t-fast),
     transform var(--t-fast), box-shadow var(--t-fast);
+}
+
+.nav-sound:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  transform: translateY(-1px);
 }
 
 .nav-theme:hover {
   color: var(--accent);
   border-color: var(--accent);
-  box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.12);
+  box-shadow: 0 0 0 4px rgba(168, 85, 247, 0.14);
   transform: translateY(-1px);
 }
 
