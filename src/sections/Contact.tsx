@@ -30,7 +30,7 @@ export default function Contact() {
         <Reveal className="contact-box">
           <div className="contact-copy">
             <span className="section-tag">
-              <span className="section-idx">07</span>contact
+              <span className="section-idx">06</span>contact
             </span>
             <h2 className="contact-title">
               Have an idea? <em>Let&apos;s build it.</em>

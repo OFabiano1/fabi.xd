@@ -1,23 +1,3 @@
-export type ProjectCategory = 'Web' | 'Tools' | 'Bots' | 'Experiments'
-
-export type ProjectStatus = 'live' | 'building' | 'paused' | 'open-source'
-
-export interface Project {
-  id: string
-  name: string
-  tagline: string
-  status: ProjectStatus
-  categories: ProjectCategory[]
-  tech: string[]
-  description: string
-  gradient: string
-  mono: string
-  links: {
-    github?: string
-    demo?: string
-  }
-}
-
 export interface StackItem {
   name: string
   group: string

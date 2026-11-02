@@ -40,7 +40,7 @@ export default function Links() {
     <section id="links" className="section">
       <div className="wrap">
         <SectionHeading
-          index="06"
+          index="05"
           tag="find me"
           title={
             <>

@@ -60,8 +60,8 @@ export default function Hero() {
         </p>
 
         <div className="hero-actions anim-fade-up" style={{ '--d': '540ms' } as React.CSSProperties}>
-          <a href="#work" className="btn btn-primary">
-            ver projetos <ArrowDown size={15} />
+          <a href="#github" className="btn btn-primary">
+            ver github <ArrowDown size={15} />
           </a>
           <a href="#about" className="btn btn-ghost">
             sobre mim

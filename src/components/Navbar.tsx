@@ -8,7 +8,7 @@ import '../styles/navbar.css'
 const links = [
   { id: 'home', label: 'Home' },
   { id: 'about', label: 'About' },
-  { id: 'work', label: 'Projects' },
+  { id: 'github', label: 'GitHub' },
   { id: 'stack', label: 'Stack' },
   { id: 'contact', label: 'Contact' },
 ]

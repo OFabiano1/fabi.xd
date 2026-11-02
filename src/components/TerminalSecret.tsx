@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { projects } from '../data/projects.ts'
+import { githubData } from '../data/github.ts'
 import { stack } from '../data/stack.ts'
 import { socials, contactEmail } from '../data/socials.ts'
 import { soundEnabled, setSoundEnabled, play } from '../lib/sounds.ts'
@@ -85,10 +85,13 @@ export default function TerminalSecret() {
         ])
         break
       case 'projetos':
-        print(
-          'out',
-          projects.map((p) => `${p.mono.padEnd(14)} ${p.name} — ${p.tagline} [${p.status}]`),
-        )
+        print('out', [
+          `${githubData.username} — ${githubData.stats.repos} repos, ${githubData.stats.commits} commits (mock local)`,
+          ...githubData.pinned.map(
+            (r) => `${r.name.padEnd(14)} ${r.description} [${r.language}] ★${r.stars}`,
+          ),
+          'detalhes na seção github do site.',
+        ])
         break
       case 'stack':
         print(
