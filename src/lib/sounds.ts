@@ -24,7 +24,7 @@ export function toggleSound(): boolean {
 
 let audioCtx: AudioContext | null = null
 
-export function play(kind: 'tap' | 'blip' | 'lo'): void {
+export function play(kind: 'tap' | 'blip' | 'lo' | 'hover'): void {
   if (!soundEnabled()) return
 
   const ResolvedCtx: typeof AudioContext | null =
@@ -42,6 +42,7 @@ export function play(kind: 'tap' | 'blip' | 'lo'): void {
     tap: { freq: 240, freq2: 180, type: 'triangle' as OscillatorType, vol: 0.035, dur: 0.05 },
     blip: { freq: 620, freq2: 520, type: 'sine' as OscillatorType, vol: 0.045, dur: 0.08 },
     lo: { freq: 140, freq2: 120, type: 'sawtooth' as OscillatorType, vol: 0.02, dur: 0.06 },
+    hover: { freq: 880, freq2: 820, type: 'sine' as OscillatorType, vol: 0.018, dur: 0.035 },
   }[kind]
 
   osc.type = cfg.type

@@ -32,17 +32,17 @@ export default function Hero() {
           <span className="dot r" />
           <span className="dot g" />
           <span className="dot b" />
-          <span className="mono">fabi.xd</span>
-          <span className="hero-badge-sep">/</span>
-          <span className="hero-badge-on">online</span>
-          <span className="hero-badge-dash mono">./things</span>
+          <span className="mono">fabi.xd/</span>
+          <span className="hero-badge-on">online.</span>
+          <span className="hero-badge-dash mono">/things</span>
         </div>
 
         <h1
           className="hero-title anim-fade-up"
           style={{ '--d': '180ms' } as React.CSSProperties}
         >
-          hey, i&apos;m fabi<span className="hero-dot">.</span>
+          hello world, i&apos;m fab
+          <span className="hero-dot">.*</span>
         </h1>
 
         <p className="hero-tagline anim-fade-up" style={{ '--d': '260ms' } as React.CSSProperties}>

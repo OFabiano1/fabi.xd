@@ -1,3 +1,21 @@
+/* rastro de tinta — canvas atrás do glow */
+.cursor-trail {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9997;
+  opacity: 0.9;
+}
+
+.cursor-trail.is-out,
+.cursor-trail.is-hidden {
+  opacity: 0 !important;
+  transition: opacity var(--t-fast);
+}
+
+/* glow mais presente */
 .cursor-glow {
   position: fixed;
   top: 0;
@@ -12,7 +30,7 @@
     var(--violet-glow),
     transparent 65%
   );
-  opacity: 0.5;
+  opacity: 0.8;
   will-change: transform;
 }
 
@@ -77,7 +95,8 @@
 @media (pointer: coarse), (prefers-reduced-motion: reduce) {
   .cursor-glow,
   .cursor-dot,
-  .cursor-ring {
+  .cursor-ring,
+  .cursor-trail {
     display: none;
   }
 }
