@@ -1,15 +1,15 @@
 .github-shell {
-  border: 1px solid var(--line);
+  border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
   background: var(--surface);
-  backdrop-filter: blur(8px);
+
   overflow: hidden;
-  box-shadow: var(--shadow-card);
-  transition: box-shadow var(--t-med), border-color var(--t-med);
+  box-shadow: var(--shadow-2);
+  transition: box-shadow var(--motion-moderate) var(--ease-standard), border-color var(--motion-moderate) var(--ease-standard);
 }
 
 .github-shell:hover {
-  box-shadow: var(--glow-soft);
+  box-shadow: var(--shadow-2);
 }
 
 .github-head {
@@ -19,8 +19,8 @@
   gap: 16px;
   flex-wrap: wrap;
   padding: 20px 24px;
-  border-bottom: 1px solid var(--line);
-  background: var(--surface-strong);
+  border-bottom: 1px solid var(--border-subtle);
+  background: var(--surface-hover);
 }
 
 .github-user {
@@ -37,8 +37,8 @@
   border-radius: 12px;
   font-size: 1.05rem;
   font-weight: 700;
-  color: var(--accent-ink);
-  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  color: var(--prism-on-primary);
+  background: var(--prism-primary);
 }
 
 .github-name {
@@ -60,15 +60,15 @@
   font-size: 0.7rem;
   letter-spacing: 0.03em;
   color: var(--text-muted);
-  background: rgba(139, 92, 246, 0.06);
-  border-bottom: 1px solid var(--line);
+  background: var(--prism-primary-soft);
+  border-bottom: 1px solid var(--border-subtle);
 }
 
 .github-mock-dot {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--accent);
+  background: var(--prism-primary-hover);
 }
 
 .github-body {
@@ -78,7 +78,7 @@
 
 .github-stats {
   padding: 24px;
-  border-right: 1px solid var(--line);
+  border-right: 1px solid var(--border-subtle);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -97,15 +97,15 @@
   display: grid;
   place-items: center;
   border-radius: 10px;
-  color: var(--accent);
-  border: 1px solid var(--line);
+  color: var(--prism-primary-hover);
+  border: 1px solid var(--border-subtle);
   background: var(--surface);
 }
 
 .github-stat-value {
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--text);
+  color: var(--text-primary);
   line-height: 1.1;
 }
 
@@ -123,7 +123,7 @@
 .github-graph span {
   height: 18px;
   border-radius: 3px;
-  background: var(--accent);
+  background: var(--prism-primary-hover);
 }
 
 .github-repos {
@@ -135,18 +135,18 @@
 
 .github-repo {
   display: block;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
   padding: 14px 16px;
   background: var(--surface);
-  transition: transform var(--t-fast), border-color var(--t-fast),
-    background-color var(--t-med);
+  transition: transform var(--motion-fast) var(--ease-standard), border-color var(--motion-fast) var(--ease-standard),
+    background-color var(--motion-moderate) var(--ease-standard);
 }
 
 .github-repo:hover {
   transform: translateY(-3px);
-  border-color: var(--accent);
-  background: var(--surface-strong);
+  border-color: var(--prism-primary-hover);
+  background: var(--surface-hover);
 }
 
 .github-repo-top {
@@ -157,25 +157,25 @@
 }
 
 .github-repo-name {
-  color: var(--accent);
+  color: var(--prism-primary-hover);
   font-size: 0.86rem;
   font-weight: 600;
 }
 
 .github-repo-arrow {
   color: var(--text-muted);
-  transition: color var(--t-fast), transform var(--t-fast);
+  transition: color var(--motion-fast) var(--ease-standard), transform var(--motion-fast) var(--ease-standard);
 }
 
 .github-repo:hover .github-repo-arrow {
-  color: var(--accent);
+  color: var(--prism-primary-hover);
   transform: translate(2px, -2px);
 }
 
 .github-repo-desc {
   margin-top: 6px;
   font-size: 0.82rem;
-  color: var(--text-soft);
+  color: var(--text-secondary);
 }
 
 .github-repo-meta {
@@ -197,7 +197,7 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: var(--accent);
+  background: var(--prism-primary-hover);
 }
 
 @media (max-width: 820px) {
@@ -207,6 +207,6 @@
 
   .github-stats {
     border-right: 0;
-    border-bottom: 1px solid var(--line);
+    border-bottom: 1px solid var(--border-subtle);
   }
 }

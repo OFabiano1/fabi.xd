@@ -2,7 +2,7 @@
 .community {
   position: relative;
   padding: clamp(70px, 12vh, 130px) 0;
-  border-top: 1px solid var(--line);
+  border-top: 1px solid var(--border-subtle);
   overflow: hidden;
 }
 
@@ -12,9 +12,7 @@
   position: absolute;
   inset: -40%;
   pointer-events: none;
-  background:
-    radial-gradient(38% 42% at 50% 55%, rgba(150, 69, 244, 0.16), transparent 70%),
-    radial-gradient(60% 55% at 80% 20%, rgba(150, 69, 244, 0.07), transparent 70%);
+  background: none;
 }
 
 .community-inner {
@@ -33,13 +31,13 @@
 
 .community-title {
   margin-top: 18px;
-  font-family: var(--font-brutal);
+  font-family: var(--font-sans);
   font-size: clamp(3.4rem, 13vw, 10rem);
   font-weight: 900;
   letter-spacing: -0.03em;
   line-height: 0.9;
-  color: var(--text);
-  text-shadow: 0 0 110px var(--violet-glow);
+  color: var(--text-primary);
+
 }
 
 .community-title:hover {
@@ -48,14 +46,14 @@
 
 .community-title-accent {
   display: block;
-  color: var(--accent);
+  color: var(--prism-primary-hover);
   -webkit-text-stroke: 2px transparent;
 }
 
 .community-tagline {
   margin-top: 22px;
   max-width: 46ch;
-  color: var(--text-soft);
+  color: var(--text-secondary);
   font-size: clamp(0.95rem, 2vw, 1.18rem);
   line-height: 1.6;
 }
@@ -70,13 +68,13 @@
 
 .community-chip {
   padding: 9px 16px;
-  border: 1.5px solid var(--line-strong);
+  border: 1.5px solid var(--border-default);
   border-radius: 999px;
-  background: var(--glass);
-  color: var(--text);
+  background: var(--background);
+  color: var(--text-primary);
   font-size: 0.78rem;
   letter-spacing: 0.16em;
-  box-shadow: 4px 4px 0 rgba(4, 2, 9, 0.85);
+  box-shadow: var(--shadow-2);
 }
 
 .community-chip:nth-child(1) {

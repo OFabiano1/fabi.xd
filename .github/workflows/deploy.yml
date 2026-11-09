@@ -3,8 +3,8 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
-    paths-ignore:
-      - 'public/spotify/**'
+  schedule:
+    - cron: '*/30 * * * *' # atualiza o "currently listening" sem commit
   workflow_dispatch:
 
 permissions:
@@ -31,6 +31,13 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Fetch Spotify
+        run: node scripts/fetch-spotify.mjs
+        env:
+          SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
+          SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
+          SPOTIFY_REFRESH_TOKEN: ${{ secrets.SPOTIFY_REFRESH_TOKEN }}
 
       - name: Build
         run: npm run build

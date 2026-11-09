@@ -11,12 +11,12 @@
   flex-direction: column;
   gap: 12px;
   padding: 24px 22px 22px;
-  border: 1.5px solid var(--line-strong);
+  border: 1.5px solid var(--border-default);
   border-radius: var(--radius-lg);
   background: var(--surface);
-  backdrop-filter: blur(8px);
-  box-shadow: var(--shadow-card);
-  transition: transform var(--t-med), border-color var(--t-med), box-shadow var(--t-med);
+
+  box-shadow: var(--shadow-2);
+  transition: transform var(--motion-moderate) var(--ease-standard), border-color var(--motion-moderate) var(--ease-standard), box-shadow var(--motion-moderate) var(--ease-standard);
 }
 
 .site-card:nth-child(2) {
@@ -29,16 +29,16 @@
 
 .site-card:hover {
   transform: translateY(-5px) rotate(0deg);
-  border-color: rgba(150, 69, 244, 0.5);
-  box-shadow: var(--glow-soft), 5px 6px 0 rgba(5, 2, 10, 0.55);
+  border-color: var(--prism-primary-border);
+  box-shadow: var(--shadow-2);
 }
 
 .site-code {
   align-self: flex-start;
   font-size: 0.7rem;
   letter-spacing: 0.18em;
-  color: var(--accent);
-  border: 1px solid rgba(150, 69, 244, 0.35);
+  color: var(--prism-primary-hover);
+  border: 1px solid var(--prism-primary-border);
   border-radius: 5px;
   padding: 3px 8px;
   transform: rotate(-1deg);
@@ -50,7 +50,7 @@
 }
 
 .site-text {
-  color: var(--text-soft);
+  color: var(--text-secondary);
   font-size: 0.92rem;
   line-height: 1.65;
 }
@@ -66,7 +66,7 @@
   letter-spacing: 0.1em;
   color: var(--text-muted);
   padding: 5px 10px;
-  border: 1px dashed var(--line-strong);
+  border: 1px dashed var(--border-default);
   border-radius: 999px;
 }
 
@@ -82,7 +82,7 @@
   display: flex;
   align-items: baseline;
   gap: 10px;
-  color: var(--text-soft);
+  color: var(--text-secondary);
   font-size: 0.9rem;
   line-height: 1.55;
 }
@@ -92,8 +92,8 @@
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 10px var(--violet-glow);
+  background: var(--prism-primary-hover);
+  box-shadow: var(--shadow-2);
   align-self: center;
 }
 
@@ -104,22 +104,22 @@
   gap: 9px;
   padding: 10px 14px;
   border-radius: 999px;
-  border: 1.5px solid rgba(150, 69, 244, 0.4);
-  color: var(--text-soft);
+  border: 1.5px solid var(--prism-primary-border);
+  color: var(--text-secondary);
   font-size: 0.78rem;
   letter-spacing: 0.04em;
-  transition: color var(--t-fast), border-color var(--t-fast), background var(--t-fast), transform var(--t-fast);
+  transition: color var(--motion-fast) var(--ease-standard), border-color var(--motion-fast) var(--ease-standard), background var(--motion-fast) var(--ease-standard), transform var(--motion-fast) var(--ease-standard);
 }
 
 .site-repo:hover {
-  color: var(--text);
-  border-color: var(--accent);
-  background: rgba(150, 69, 244, 0.12);
+  color: var(--text-primary);
+  border-color: var(--prism-primary-hover);
+  background: var(--prism-primary-soft);
   transform: translateY(-2px) rotate(-0.5deg);
 }
 
 .site-heart {
-  color: var(--accent-2);
+  color: var(--prism-primary-hover);
 }
 
 .site-foot {

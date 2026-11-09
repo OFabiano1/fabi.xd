@@ -17,13 +17,12 @@ const data = spotifyJson as SpotifyData
 
 function timeAgo(unix: number): string {
   if (!unix) return '--'
-  const mins = Math.max(0, Date.now() - unix * 1000) / 60000
-  const m = Math.floor(mins)
-  if (m < 1) return ' agora'
-  if (m < 60) return `${m}m`
+  const m = Math.floor(Math.max(0, Date.now() - unix * 1000) / 60000)
+  if (m < 1) return 'agora'
+  if (m < 60) return `há ${m}m`
   const h = Math.floor(m / 60)
-  if (h < 24) return `${h}h`
-  return `${Math.floor(h / 24)}d`
+  if (h < 24) return `há ${h}h`
+  return `há ${Math.floor(h / 24)}d`
 }
 
 /** Currently listening — Spotify recently played (live via GitHub Action). */
@@ -72,12 +71,12 @@ export default function Spotify() {
 
               {data.isMocked ? (
                 <div className="spotify-hint mono">
-                  integração real — workflow `.github/workflows/spotify.yml` +
-                  `scripts/fetch-spotify.mjs` (secrets no Actions).
+                  integração real — `scripts/fetch-spotify.mjs` roda no deploy
+                  (secrets no Actions).
                 </div>
               ) : (
                 <div className="spotify-hint mono">
-                  atualizado há {timeAgo(data.updated)} via GitHub Action
+                  atualizado {timeAgo(data.updated)} via GitHub Action
                 </div>
               )}
             </div>

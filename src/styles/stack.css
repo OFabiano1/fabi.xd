@@ -4,7 +4,7 @@
   margin: 0;
   padding: 0;
   display: grid;
-  border-top: 1px solid var(--line);
+  border-top: 1px solid var(--border-subtle);
 }
 
 .stack-cell {
@@ -13,12 +13,12 @@
   align-items: baseline;
   gap: 18px;
   padding: 16px 10px;
-  border-bottom: 1px solid var(--line);
-  transition: background var(--t-fast), padding-left var(--t-fast);
+  border-bottom: 1px solid var(--border-subtle);
+  transition: background var(--motion-fast) var(--ease-standard), padding-left var(--motion-fast) var(--ease-standard);
 }
 
 .stack-cell:hover {
-  background: var(--surface-strong);
+  background: var(--surface-hover);
   padding-left: 16px;
 }
 
@@ -29,16 +29,16 @@
 }
 
 .stack-cell-name {
-  font-family: var(--font-display);
+  font-family: var(--font-sans);
   font-size: clamp(1.1rem, 2.6vw, 1.7rem);
   font-weight: 800;
   letter-spacing: -0.01em;
-  color: var(--text);
-  transition: color var(--t-fast);
+  color: var(--text-primary);
+  transition: color var(--motion-fast) var(--ease-standard);
 }
 
 .stack-cell:hover .stack-cell-name {
-  color: var(--accent);
+  color: var(--prism-primary-hover);
 }
 
 .stack-cell-note {

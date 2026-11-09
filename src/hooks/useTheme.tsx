@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useState } from 'react'
 import type { ReactNode } from 'react'
+import { DesignSystemProvider } from 'prism'
 
 type Theme = 'dark' | 'light'
 
@@ -31,7 +32,10 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      {children}
+      {/* data-theme no <html> pinta só o shell; dentro, o tema é do Prism */}
+      <DesignSystemProvider theme={theme} onThemeChange={setTheme}>
+        {children}
+      </DesignSystemProvider>
     </ThemeContext.Provider>
   )
 }

@@ -5,9 +5,9 @@
   display: grid;
   place-items: start center;
   padding: clamp(48px, 12vh, 96px) 16px 16px;
-  background: rgba(4, 2, 8, 0.72);
-  backdrop-filter: blur(6px);
-  animation: terminal-in var(--t-fast) both;
+  background: var(--overlay);
+
+  animation: terminal-in var(--motion-fast) var(--ease-standard) both;
 }
 
 @keyframes terminal-in {
@@ -25,13 +25,10 @@
   max-height: min(64vh, 560px);
   display: flex;
   flex-direction: column;
-  border: 1px solid rgba(150, 69, 244, 0.4);
-  border-radius: var(--radius);
-  background: rgba(8, 4, 14, 0.96);
-  box-shadow:
-    0 0 0 1px rgba(150, 69, 244, 0.15),
-    0 30px 90px -20px rgba(90, 20, 180, 0.45),
-    inset 0 1px 0 rgba(150, 69, 244, 0.12);
+  border: 1px solid var(--prism-primary-border);
+  border-radius: var(--radius-md);
+  background: var(--surface-elevated);
+
   overflow: hidden;
 }
 
@@ -45,12 +42,12 @@
   font-size: 0.8rem;
   padding: 6px 9px;
   border-radius: var(--radius-sm);
-  transition: color var(--t-fast), background var(--t-fast);
+  transition: color var(--motion-fast) var(--ease-standard), background var(--motion-fast) var(--ease-standard);
 }
 
 .terminal-close:hover {
-  color: var(--accent);
-  background: var(--surface-strong);
+  color: var(--prism-primary-hover);
+  background: var(--surface-hover);
 }
 
 .terminal-body {
@@ -61,7 +58,7 @@
   flex-direction: column;
   gap: 3px;
   scrollbar-width: thin;
-  scrollbar-color: var(--accent-strong) transparent;
+  scrollbar-color: var(--prism-primary) transparent;
 }
 
 .terminal-line {
@@ -72,20 +69,20 @@
 }
 
 .terminal-line-in {
-  color: var(--text);
+  color: var(--text-primary);
   margin-top: 8px;
 }
 
 .terminal-line-in::first-line {
-  color: var(--accent);
+  color: var(--prism-primary-hover);
 }
 
 .terminal-line-out {
-  color: var(--text-soft);
+  color: var(--text-secondary);
 }
 
 .terminal-line-sys {
-  color: var(--accent);
+  color: var(--prism-primary-hover);
 }
 
 .terminal-input-row {
@@ -93,12 +90,12 @@
   align-items: center;
   gap: 10px;
   padding: 12px 18px 14px;
-  border-top: 1px solid rgba(150, 69, 244, 0.22);
-  background: rgba(150, 69, 244, 0.05);
+  border-top: 1px solid var(--prism-primary-border);
+  background: var(--prism-primary-soft);
 }
 
 .terminal-prompt {
-  color: var(--accent);
+  color: var(--prism-primary-hover);
   font-size: 0.8rem;
   white-space: nowrap;
 }
@@ -108,9 +105,9 @@
   background: none;
   border: 0;
   outline: 0;
-  color: var(--text);
+  color: var(--text-primary);
   font-size: 0.8rem;
-  caret-color: var(--accent);
+  caret-color: var(--prism-primary-hover);
 }
 
 @media (max-width: 640px) {

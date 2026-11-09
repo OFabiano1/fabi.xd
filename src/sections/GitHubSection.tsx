@@ -1,4 +1,5 @@
 import { ArrowUpRight, GitCommitHorizontal, GitFork, Puzzle, Star } from 'lucide-react'
+import { Button } from 'prism'
 import Reveal from '../components/Reveal.tsx'
 import SectionHeading from '../components/SectionHeading.tsx'
 import { githubData } from '../data/github.ts'
@@ -36,14 +37,14 @@ export default function GitHubSection() {
                 <div className="github-tag mono">code &gt; noise</div>
               </div>
             </div>
-            <a
+            <Button
               href={`https://github.com/${username}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-primary"
-            >
-              view github <ArrowUpRight size={15} />
-            </a>
+              external
+              variant="secondary"
+              label="view github"
+              icon={ArrowUpRight}
+              iconPosition="end"
+            />
           </div>
 
           {isMocked && (

@@ -1,83 +1,28 @@
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 9px;
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  padding: 13px 22px;
-  border-radius: var(--radius-sm);
-  border: 1.5px solid var(--line-strong);
-  color: var(--text);
-  transition: transform var(--t-fast), border-color var(--t-fast),
-    box-shadow var(--t-fast), background-color var(--t-med), color var(--t-med);
-}
-
-.btn:hover {
-  transform: translateY(-2px);
-}
-
-.btn:active {
-  transform: translateY(0) scale(0.98);
-}
-
-.btn-primary {
-  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
-  color: var(--accent-ink);
-  border-color: var(--accent-strong);
-  box-shadow: 5px 5px 0 rgba(5, 2, 10, 0.9), 0 10px 32px -12px var(--violet-glow);
-}
-
-.btn-primary:hover {
-  box-shadow: 6px 7px 0 rgba(5, 2, 10, 0.9), 0 18px 44px -12px var(--violet-glow);
-}
-
-.btn-primary:active {
-  box-shadow: 1px 1px 0 rgba(5, 2, 10, 0.9);
-}
-
-.btn-ghost {
-  background: var(--surface);
-  border-color: var(--line-strong);
-  border-style: dashed;
-  backdrop-filter: blur(8px);
-}
-
-.btn-ghost:hover {
-  border-style: solid;
-  border-color: var(--accent);
-  color: var(--accent);
-  box-shadow: 4px 4px 0 rgba(5, 2, 10, 0.5);
-  transform: rotate(-0.5deg) translateY(-2px);
-}
-
 .badge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   padding: 7px 14px;
   border-radius: 999px;
-  border: 1px solid var(--line);
+  border: 1px solid var(--border-subtle);
   background: var(--surface);
   font-family: var(--font-mono);
   font-size: 0.76rem;
-  color: var(--text-soft);
-  transition: border-color var(--t-fast), color var(--t-fast),
-    background-color var(--t-med);
+  color: var(--text-secondary);
+  transition: border-color var(--motion-fast) var(--ease-standard), color var(--motion-fast) var(--ease-standard),
+    background-color var(--motion-moderate) var(--ease-standard);
 }
 
 .badge:hover {
-  border-color: var(--accent);
-  color: var(--text);
+  border-color: var(--prism-primary-hover);
+  color: var(--text-primary);
 }
 
 .dot {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: var(--green);
+  background: var(--success);
   display: inline-block;
   animation: pulse-dot 2s ease-in-out infinite;
 }

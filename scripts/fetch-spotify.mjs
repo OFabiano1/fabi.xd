@@ -1,83 +1,63 @@
 #!/usr/bin/env node
 /**
  * Busca as últimas faixas do Spotify (recently played) e grava
- * `src/data/spotify.json` — depois um commit automático pelo GitHub Actions.
+ * `src/data/spotify.json` antes do build. Roda dentro do deploy.yml.
  *
- * Secrets exigidos no Actions:
- *   SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, SPOTIFY_REFRESH_TOKEN
+ * Secrets no Actions: SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, SPOTIFY_REFRESH_TOKEN
+ * (refresh token com scope user-read-recently-played).
  *
- * Como criar o refresh token: registre um app no Spotify Developer,
- * rode /v1/authorize com scope user-read-recently-played/ user-read-currently-
- * playing e troque o code pelo refresh (Authorization Code com PKCE off).
+ * Nunca derruba o deploy: sem secret ou com erro na API, mantém o JSON atual.
  */
-import { writeFileSync, readFileSync, existsSync } from 'node:fs'
+import { writeFileSync } from 'node:fs'
 import { resolve, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
-const root = resolve(dirname(fileURLToPath(import.meta.url)), '..')
-const outFile = resolve(root, 'src/data/spotify.json')
+const outFile = resolve(dirname(fileURLToPath(import.meta.url)), '../src/data/spotify.json')
+const { SPOTIFY_CLIENT_ID: id, SPOTIFY_CLIENT_SECRET: secret, SPOTIFY_REFRESH_TOKEN: refresh } = process.env
 
-const client_id = process.env.SPOTIFY_CLIENT_ID
-const client_secret = process.env.SPOTIFY_CLIENT_SECRET
-const refresh_token = process.env.SPOTIFY_REFRESH_TOKEN
-
-const basic = Buffer.from(`${client_id}:${client_secret}`).toString('base64')
-const authRes = await fetch('https://accounts.spotify.com/api/token', {
-  method: 'POST',
-  headers: {
-    Authorization: `Basic ${basic}`,
-    'Content-Type': 'application/x-www-form-urlencoded',
-  },
-  body: new URLSearchParams({
-    grant_type: 'refresh_token',
-    refresh_token,
-  }),
-})
-const auth = await authRes.json()
-
-if (!auth.access_token) {
-  console.error('spotify: falha ao obter token:', auth.error ?? auth)
-  process.exit(1)
+function skip(msg) {
+  console.log(`::warning::spotify: ${msg} — mantendo spotify.json atual`)
+  process.exit(0)
 }
 
-const res = await fetch('https://api.spotify.com/v1/me/player/recently-played?limit=6', {
-  headers: { Authorization: `Bearer ${auth.access_token}` },
-})
+if (!id || !secret || !refresh) skip('secrets ausentes')
 
-const raw = await res.json()
-const items = Array.isArray(raw?.items) ? raw.items : []
-const seen = new Set()
-const tracks = items
-  .map((i) => ({
-    name: i.track.name,
-    artist: i.track.artists?.[0]?.name ?? '',
-    album: i.track.album?.name ?? '',
-    image: i.track.album?.images?.[1]?.url ?? i.track.album?.images?.[0]?.url ?? '',
-    url: i.track.external_urls?.spotify ?? 'https://open.spotify.com/',
-    playedAt: Math.floor(new Date(i.played_at).getTime() / 1000),
-  }))
-  .filter((t) => {
-    const key = `${t.name}|${t.playedAt}`
-    if (seen.has(key)) return false
-    seen.add(key)
-    return true
-  })
-  .slice(0, 6)
-
-const fallback = existsSync(outFile)
-  ? JSON.parse(readFileSync(outFile, 'utf8'))
-  : { isMocked: true, updated: 0, tracks: [] }
-
-writeFileSync(
-  outFile,
-  `${JSON.stringify(
-    {
-      isMocked: false,
-      updated: Math.floor(Date.now() / 1000),
-      tracks: tracks.length ? tracks : fallback.tracks,
+try {
+  const authRes = await fetch('https://accounts.spotify.com/api/token', {
+    method: 'POST',
+    headers: {
+      Authorization: `Basic ${Buffer.from(`${id}:${secret}`).toString('base64')}`,
+      'Content-Type': 'application/x-www-form-urlencoded',
     },
-    null,
-    2,
-  )}\n`,
-)
-console.log('spotify.json atualizado com', tracks.length, 'faixas')
+    body: new URLSearchParams({ grant_type: 'refresh_token', refresh_token: refresh }),
+  })
+  const auth = await authRes.json()
+  if (!auth.access_token) skip(`token falhou (${auth.error ?? authRes.status})`)
+
+  const res = await fetch('https://api.spotify.com/v1/me/player/recently-played?limit=20', {
+    headers: { Authorization: `Bearer ${auth.access_token}` },
+  })
+  if (!res.ok) skip(`recently-played respondeu ${res.status}`)
+
+  const { items = [] } = await res.json()
+  const seen = new Set()
+  const tracks = items
+    .filter((i) => i.track && !seen.has(i.track.id) && seen.add(i.track.id)) // sem repetir a mesma faixa
+    .slice(0, 6)
+    .map(({ track, played_at }) => ({
+      name: track.name,
+      artist: track.artists.map((a) => a.name).join(', '),
+      album: track.album?.name ?? '',
+      image: track.album?.images?.[1]?.url ?? track.album?.images?.[0]?.url ?? '',
+      url: track.external_urls?.spotify ?? 'https://open.spotify.com/',
+      playedAt: Math.floor(new Date(played_at).getTime() / 1000),
+    }))
+
+  if (!tracks.length) skip('nenhuma faixa recente')
+
+  const data = { isMocked: false, updated: Math.floor(Date.now() / 1000), tracks }
+  writeFileSync(outFile, `${JSON.stringify(data, null, 2)}\n`)
+  console.log(`spotify.json atualizado com ${tracks.length} faixas`)
+} catch (err) {
+  skip(`erro de rede (${err.message})`)
+}

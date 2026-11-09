@@ -1,6 +1,6 @@
 .marquee {
   overflow: hidden;
-  border-block: 1px solid var(--line);
+  border-block: 1px solid var(--border-subtle);
   padding: 14px 0;
   user-select: none;
   mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
@@ -28,19 +28,19 @@
   font-size: 0.82rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--text-soft);
+  color: var(--text-secondary);
   white-space: nowrap;
 }
 
 /* ciclo de cor — roxo, fucsia, roxo forte, mudo */
 .marquee-item:nth-child(4n + 1) {
-  color: var(--text-soft);
+  color: var(--text-secondary);
 }
 .marquee-item:nth-child(4n + 2) {
-  color: var(--accent);
+  color: var(--prism-primary-hover);
 }
 .marquee-item:nth-child(4n + 3) {
-  color: var(--accent-2);
+  color: var(--prism-primary-hover);
 }
 .marquee-item:nth-child(4n + 4) {
   color: var(--text-muted);
@@ -52,12 +52,12 @@
 }
 
 .marquee-star {
-  color: var(--accent-2);
+  color: var(--prism-primary-hover);
   font-size: 0.7rem;
 }
 
 .marquee-item:nth-child(2n) .marquee-star {
-  color: var(--accent);
+  color: var(--prism-primary-hover);
 }
 
 @media (prefers-reduced-motion: reduce) {

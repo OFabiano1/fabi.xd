@@ -1,4 +1,5 @@
 import { ArrowUpRight } from 'lucide-react'
+import { Button } from 'prism'
 import Reveal from '../components/Reveal.tsx'
 import '../styles/community.css'
 
@@ -38,24 +39,15 @@ export default function Community() {
 
         <Reveal delay={300}>
           <div className="community-actions">
-            <a
+            <Button
               href="https://dsc.gg/axolotlbr"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-primary"
-              data-cursor
-            >
-              entrar no discord <ArrowUpRight size={15} />
-            </a>
-            <a
-              href="https://github.com/OFabiano1"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-ghost"
-              data-cursor
-            >
-              ver o código <ArrowUpRight size={15} />
-            </a>
+              external
+              size="lg"
+              label="entrar no discord"
+              icon={ArrowUpRight}
+              iconPosition="end"
+            />
+            <Button href="https://github.com/OFabiano1" external size="lg" variant="secondary" label="ver o código" />
           </div>
         </Reveal>
 

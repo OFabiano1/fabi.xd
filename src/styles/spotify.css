@@ -10,19 +10,19 @@
   flex-direction: column;
   gap: 16px;
   padding: 18px 20px 20px;
-  border: 1.5px solid var(--line-strong);
+  border: 1.5px solid var(--border-default);
   border-radius: var(--radius-lg);
   background: var(--surface);
-  backdrop-filter: blur(8px);
-  box-shadow: var(--shadow-card);
+
+  box-shadow: var(--shadow-2);
   transform: rotate(-0.7deg);
-  transition: transform var(--t-med), border-color var(--t-med), box-shadow var(--t-med);
+  transition: transform var(--motion-moderate) var(--ease-standard), border-color var(--motion-moderate) var(--ease-standard), box-shadow var(--motion-moderate) var(--ease-standard);
 }
 
 .spotify-card:hover {
   transform: rotate(0deg) translateY(-4px);
-  border-color: rgba(150, 69, 244, 0.55);
-  box-shadow: var(--glow-soft), 5px 6px 0 rgba(5, 2, 10, 0.55);
+  border-color: var(--prism-primary-border);
+  box-shadow: var(--shadow-2);
 }
 
 .spotify-card-bar {
@@ -30,7 +30,7 @@
   align-items: center;
   gap: 8px;
   padding-bottom: 12px;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid var(--border-subtle);
 }
 
 .spotify-card-bar .mono {
@@ -45,22 +45,22 @@
 }
 
 .spotify-card .dot.r {
-  background: #f26d6d;
+  background: var(--border-strong);
 }
 
 .spotify-card .dot.g {
-  background: #55d47a;
+  background: var(--border-strong);
 }
 
 .spotify-card .dot.b {
-  background: #5b9cf5;
+  background: var(--border-strong);
 }
 
 .spotify-note {
   display: flex;
   align-items: center;
   gap: 10px;
-  color: var(--text);
+  color: var(--text-primary);
   font-weight: 600;
 }
 
@@ -75,17 +75,17 @@
   align-self: flex-start;
   padding: 10px 16px;
   border-radius: 999px;
-  border: 1.5px solid var(--line-strong);
-  color: var(--text-soft);
+  border: 1.5px solid var(--border-default);
+  color: var(--text-secondary);
   font-size: 0.76rem;
   letter-spacing: 0.06em;
-  transition: color var(--t-fast), border-color var(--t-fast), background var(--t-fast), transform var(--t-fast);
+  transition: color var(--motion-fast) var(--ease-standard), border-color var(--motion-fast) var(--ease-standard), background var(--motion-fast) var(--ease-standard), transform var(--motion-fast) var(--ease-standard);
 }
 
 .spotify-open:hover {
-  color: var(--text);
-  border-color: var(--accent);
-  background: rgba(150, 69, 244, 0.12);
+  color: var(--text-primary);
+  border-color: var(--prism-primary-hover);
+  background: var(--prism-primary-soft);
   transform: translateY(-2px) rotate(-0.5deg);
 }
 
@@ -109,16 +109,16 @@
   align-items: center;
   gap: 14px;
   padding: 12px 14px;
-  border-radius: var(--radius);
-  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
   background: var(--surface);
-  transition: transform var(--t-fast), border-color var(--t-fast), background var(--t-fast);
+  transition: transform var(--motion-fast) var(--ease-standard), border-color var(--motion-fast) var(--ease-standard), background var(--motion-fast) var(--ease-standard);
 }
 
 .spotify-track:hover {
   transform: translateX(4px) rotate(-0.2deg);
-  border-color: rgba(150, 69, 244, 0.45);
-  background: var(--surface-strong);
+  border-color: var(--prism-primary-border);
+  background: var(--surface-hover);
 }
 
 .spotify-track img,
@@ -133,9 +133,9 @@
 .spotify-cover-fallback {
   display: grid;
   place-items: center;
-  color: var(--accent);
-  background: linear-gradient(140deg, rgba(150, 69, 244, 0.35), rgba(20, 4, 34, 0.8));
-  border: 1px solid rgba(150, 69, 244, 0.4);
+  color: var(--prism-primary-hover);
+  background: var(--prism-primary-soft);
+  border: 1px solid var(--prism-primary-border);
 }
 
 .spotify-meta {
@@ -152,7 +152,7 @@
 }
 
 .spotify-name {
-  color: var(--text);
+  color: var(--text-primary);
   font-weight: 600;
   font-size: 0.92rem;
   white-space: nowrap;
@@ -161,11 +161,11 @@
 }
 
 .spotify-track:hover .spotify-name {
-  color: var(--accent);
+  color: var(--prism-primary-hover);
 }
 
 .spotify-artist {
-  color: var(--text-soft);
+  color: var(--text-secondary);
   font-size: 0.8rem;
   white-space: nowrap;
   overflow: hidden;
@@ -197,14 +197,14 @@
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  border: 1px solid rgba(150, 69, 244, 0.4);
-  color: var(--accent);
-  transition: background var(--t-fast), color var(--t-fast), transform var(--t-fast);
+  border: 1px solid var(--prism-primary-border);
+  color: var(--prism-primary-hover);
+  transition: background var(--motion-fast) var(--ease-standard), color var(--motion-fast) var(--ease-standard), transform var(--motion-fast) var(--ease-standard);
 }
 
 .spotify-play:hover {
-  background: var(--accent);
-  color: var(--accent-ink);
+  background: var(--prism-primary-hover);
+  color: var(--prism-on-primary);
   transform: scale(1.08);
 }
 

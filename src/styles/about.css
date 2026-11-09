@@ -7,17 +7,17 @@
 
 .about-lead {
   font-size: clamp(1.1rem, 2vw, 1.35rem);
-  color: var(--text);
+  color: var(--text-primary);
   line-height: 1.5;
 }
 
 .about-lead b {
-  color: var(--accent);
+  color: var(--prism-primary-hover);
   font-weight: 600;
 }
 
 .about-copy p {
-  color: var(--text-soft);
+  color: var(--text-secondary);
   margin-top: 14px;
   max-width: 56ch;
 }
@@ -33,7 +33,7 @@
   align-items: baseline;
   gap: 13px;
   padding: 9px 0;
-  border-bottom: 1px dashed var(--line);
+  border-bottom: 1px dashed var(--border-subtle);
 }
 
 .about-item:last-child {
@@ -45,8 +45,8 @@
   height: 7px;
   border-radius: 50%;
   align-self: center;
-  background: var(--accent);
-  box-shadow: 0 0 12px var(--violet-glow);
+  background: var(--prism-primary-hover);
+  box-shadow: var(--shadow-2);
 }
 
 .about-item-label {
@@ -63,15 +63,15 @@
 }
 
 .about-card {
-  border: 1.5px solid var(--line-strong);
+  border: 1.5px solid var(--border-default);
   border-radius: var(--radius-lg);
   background: var(--surface);
-  backdrop-filter: blur(8px);
-  box-shadow: var(--shadow-card);
+
+  box-shadow: var(--shadow-2);
   overflow: hidden;
   transform: rotate(-0.6deg);
-  transition: transform var(--t-med), border-color var(--t-med),
-    box-shadow var(--t-med);
+  transition: transform var(--motion-moderate) var(--ease-standard), border-color var(--motion-moderate) var(--ease-standard),
+    box-shadow var(--motion-moderate) var(--ease-standard);
   position: relative;
 }
 
@@ -83,22 +83,22 @@
   right: 64px;
   width: 86px;
   height: 22px;
-  background: rgba(194, 107, 255, 0.4);
+  background: var(--prism-primary-soft);
   transform: rotate(3deg);
-  border: 1px solid rgba(194, 107, 255, 0.35);
+  border: 1px solid var(--prism-primary-border);
   border-radius: 2px;
-  backdrop-filter: blur(2px);
+
   z-index: 2;
 }
 
 .about-item:hover .about-item-dot,
 .about-card:hover {
   transform: rotate(0deg) translateY(-4px);
-  border-color: rgba(150, 69, 244, 0.5);
+  border-color: var(--prism-primary-border);
 }
 
 .about-card:hover {
-  box-shadow: var(--glow-soft);
+  box-shadow: var(--shadow-2);
 }
 
 .about-card-bar {
@@ -106,8 +106,8 @@
   align-items: center;
   gap: 7px;
   padding: 12px 15px;
-  border-bottom: 1px solid var(--line);
-  background: var(--surface-strong);
+  border-bottom: 1px solid var(--border-subtle);
+  background: var(--surface-hover);
 }
 
 .about-card-dot {
@@ -117,13 +117,13 @@
 }
 
 .about-card-dot.r {
-  background: #f26d6d;
+  background: var(--border-strong);
 }
 .about-card-dot.g {
-  background: #55d47a;
+  background: var(--border-strong);
 }
 .about-card-dot.b {
-  background: #5b9cf5;
+  background: var(--border-strong);
 }
 
 .about-card-bar .mono {
@@ -136,7 +136,7 @@
 .about-portrait {
   position: relative;
   overflow: hidden;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid var(--border-subtle);
   cursor: pointer;
 }
 
@@ -146,7 +146,7 @@
   object-fit: cover;
   object-position: 50% 28%;
   filter: saturate(1.08);
-  transition: transform 0.9s var(--ease);
+  transition: transform 0.9s var(--ease-enter);
   display: block;
   will-change: transform;
 }
@@ -159,13 +159,7 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: linear-gradient(
-    165deg,
-    rgba(150, 69, 244, 0.18),
-    transparent 45%,
-    rgba(20, 2, 32, 0.35) 92%
-  );
-  mix-blend-mode: multiply;
+  background: none;
 }
 
 .about-portrait-tag {
@@ -174,19 +168,19 @@
   bottom: 12px;
   font-size: 0.66rem;
   letter-spacing: 0.14em;
-  color: var(--text);
-  background: rgba(6, 3, 12, 0.62);
-  backdrop-filter: blur(6px);
+  color: var(--text-primary);
+  background: var(--overlay);
+
   padding: 6px 11px;
   border-radius: 999px;
-  border: 1px solid rgba(150, 69, 244, 0.35);
+  border: 1px solid var(--prism-primary-border);
 }
 
 .about-card-body {
   padding: 18px 20px 20px;
   font-size: 0.82rem;
   line-height: 1.75;
-  color: var(--text-soft);
+  color: var(--text-secondary);
   position: relative;
 }
 
@@ -197,15 +191,15 @@
 .kw,
 .fn,
 .bool {
-  color: var(--accent);
+  color: var(--prism-primary-hover);
 }
 
 .str {
-  color: var(--green);
+  color: var(--success);
 }
 
 .key {
-  color: var(--text);
+  color: var(--text-primary);
 }
 
 .comment {

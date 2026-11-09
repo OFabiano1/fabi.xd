@@ -1,69 +1,23 @@
+/* fabi.xd — pegada do site.
+   Cor, tipo, espaço, raio, sombra e movimento vêm do Prism ('prism/styles.css'
+   em main.tsx) e o CSS das seções lê os papéis dele direto. Aqui fica só o que
+   o Prism deixa para o app: layout de página e o shell fora do provider.
+   Não redeclare --prism-*, --space-*, --text-*, --radius-* nem --font-*. */
+
 :root {
   color-scheme: dark;
 
-  --bg: #0b0b12;
-  --bg-soft: #10101a;
-  --bg-elevated: #151522;
-  --surface: rgba(255, 255, 255, 0.028);
-  --surface-strong: rgba(255, 255, 255, 0.055);
-  --glass: rgba(16, 16, 26, 0.72);
-  --line: rgba(255, 255, 255, 0.08);
-  --line-strong: rgba(255, 255, 255, 0.14);
+  /* shell fora do provider: espelha --background/--text-primary do Prism */
+  --shell-bg: #09090d;
+  --shell-text: #f0f0f4;
 
-  --text: #ececf6;
-  --text-soft: #b9b9cc;
-  --text-muted: #84849b;
-
-  --accent: #9645f4;
-  --accent-strong: #7c2ee0;
-  --accent-ink: #170224;
-  --accent-2: #c26bff;
-  --violet-glow: rgba(150, 69, 244, 0.5);
-  --green: #6ee7a0;
-
-  --font-display: "Inter", system-ui, -apple-system, sans-serif;
-  --font-brutal: "Inter", system-ui, -apple-system, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, "Cascadia Code", monospace;
-
-  --radius: 14px;
-  --radius-lg: 20px;
-  --radius-sm: 9px;
-
+  /* layout de página */
   --nav-h: 68px;
   --wrap: 1120px;
-
-  --shadow-card: 0 18px 50px -22px rgba(0, 0, 0, 0.75);
-  --glow-soft: 0 0 0 1px rgba(150, 69, 244, 0.3), 0 12px 40px -14px rgba(150, 69, 244, 0.5);
-
-  --ease: cubic-bezier(0.22, 1, 0.36, 1);
-  --t-fast: 0.18s var(--ease);
-  --t-med: 0.32s var(--ease);
-  --t-slow: 0.6s var(--ease);
 }
 
 [data-theme="light"] {
   color-scheme: light;
-
-  --bg: #f6f6fa;
-  --bg-soft: #ededf4;
-  --bg-elevated: #ffffff;
-  --surface: rgba(20, 20, 40, 0.03);
-  --surface-strong: rgba(20, 20, 40, 0.06);
-  --glass: rgba(255, 255, 255, 0.75);
-  --line: rgba(12, 12, 30, 0.09);
-  --line-strong: rgba(12, 12, 30, 0.16);
-
-  --text: #181827;
-  --text-soft: #4a4a60;
-  --text-muted: #7a7a92;
-
-  --accent: #9645f4;
-  --accent-strong: #6514c2;
-  --accent-ink: #ffffff;
-  --accent-2: #b517f2;
-  --violet-glow: rgba(150, 69, 244, 0.24);
-  --green: #059669;
-
-  --shadow-card: 0 20px 46px -28px rgba(60, 40, 120, 0.32);
-  --glow-soft: 0 0 0 1px rgba(150, 69, 244, 0.2), 0 14px 36px -18px rgba(150, 69, 244, 0.34);
+  --shell-bg: #fafafc;
+  --shell-text: #0b0b10;
 }

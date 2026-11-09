@@ -27,21 +27,17 @@
 .hero-media-veil {
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(80% 70% at 50% 40%, transparent 12%, var(--bg) 82%),
-    linear-gradient(180deg, rgba(11, 11, 18, 0.4), transparent 30%, var(--bg) 96%);
+  /* véu da cor do fundo: escurece no tema escuro, clareia no claro */
+  background: color-mix(in srgb, var(--background) 72%, transparent);
 }
 
 .hero-grid-bg {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background-image:
-    linear-gradient(var(--line) 1px, transparent 1px),
-    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-image: none;
   background-size: 64px 64px;
-  mask-image: radial-gradient(70% 60% at 50% 30%, #000 0%, transparent 72%);
-  -webkit-mask-image: radial-gradient(70% 60% at 50% 30%, #000 0%, transparent 72%);
+
 }
 
 .hero-inner {
@@ -57,11 +53,11 @@
   gap: 9px;
   padding: 8px 15px;
   border-radius: 999px;
-  border: 1px solid var(--line);
+  border: 1px solid var(--border-subtle);
   background: var(--surface);
-  backdrop-filter: blur(8px);
+
   font-size: 0.76rem;
-  color: var(--text-soft);
+  color: var(--text-secondary);
   margin-bottom: clamp(28px, 5vh, 48px);
 }
 
@@ -71,16 +67,16 @@
 }
 
 .hero-badge-on {
-  color: var(--text);
+  color: var(--text-primary);
 }
 
 .hero-title {
-  font-family: var(--font-brutal);
+  font-family: var(--font-sans);
   font-size: clamp(2.6rem, 10.5vw, 7.6rem);
   font-weight: 900;
   letter-spacing: -0.03em;
   line-height: 0.98;
-  text-shadow: 0 0 90px var(--violet-glow);
+
 }
 
 .hero-title:hover {
@@ -94,30 +90,30 @@
 }
 
 .hero-dot {
-  color: var(--accent);
-  text-shadow: 0 0 40px var(--violet-glow);
+  color: var(--prism-primary-hover);
+
 }
 
 /* dots de fita gravando — vermelho, verde, azul */
 .dot.r {
-  background: #f26d6d;
+  background: var(--border-strong);
   animation-delay: 0.25s;
 }
 
 .dot.g {
-  background: #55d47a;
+  background: var(--border-strong);
   animation-delay: 0.45s;
 }
 
 .dot.b {
-  background: #5b9cf5;
+  background: var(--border-strong);
   animation-delay: 0.65s;
 }
 
 .hero-tagline {
   margin-top: 18px;
   font-size: clamp(1rem, 2.2vw, 1.5rem);
-  color: var(--text-soft);
+  color: var(--text-secondary);
   display: flex;
   align-items: center;
   gap: 10px;
@@ -128,7 +124,7 @@
 /* giz de cera roxo — the marker underline */
 .hero-tag-strong {
   position: relative;
-  color: var(--text);
+  color: var(--text-primary);
 }
 
 .hero-tag-strong::after {
@@ -144,7 +140,7 @@
   transform-origin: left center;
   transform: scaleX(0);
   opacity: 0;
-  animation: scribble-in 0.7s var(--ease) 1.1s forwards;
+  animation: scribble-in 0.7s var(--ease-enter) 1.1s forwards;
 }
 
 .hero-sub {
@@ -178,11 +174,11 @@
   font-size: 0.72rem;
   letter-spacing: 0.08em;
   color: var(--text-muted);
-  transition: color var(--t-fast);
+  transition: color var(--motion-fast) var(--ease-standard);
 }
 
 .hero-soc-link:hover {
-  color: var(--accent);
+  color: var(--prism-primary-hover);
 }
 
 /* currently into chips */
@@ -209,17 +205,17 @@
 
 .hero-into-chip {
   padding: 6px 12px;
-  border: 1px solid var(--line);
+  border: 1px solid var(--border-subtle);
   border-radius: 999px;
   background: var(--surface);
   font-size: 0.72rem;
-  color: var(--text-soft);
-  transition: color var(--t-fast), border-color var(--t-fast), transform var(--t-fast);
+  color: var(--text-secondary);
+  transition: color var(--motion-fast) var(--ease-standard), border-color var(--motion-fast) var(--ease-standard), transform var(--motion-fast) var(--ease-standard);
 }
 
 .hero-into-chip:hover {
-  color: var(--text);
-  border-color: var(--accent);
+  color: var(--text-primary);
+  border-color: var(--prism-primary-hover);
   transform: translateY(-2px);
 }
 
@@ -235,17 +231,17 @@
   font-size: 0.66rem;
   letter-spacing: 0.22em;
   color: var(--text-muted);
-  transition: color var(--t-fast);
+  transition: color var(--motion-fast) var(--ease-standard);
 }
 
 .hero-scroll:hover {
-  color: var(--accent);
+  color: var(--prism-primary-hover);
 }
 
 .hero-scroll-line {
   width: 1px;
   height: 30px;
-  background: linear-gradient(var(--accent), transparent);
+  background: var(--border-strong);
   animation: scroll-hint 1.8s ease-in-out infinite;
 }
 

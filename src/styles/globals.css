@@ -16,35 +16,22 @@ body {
   overflow-x: hidden;
 }
 
+/* body fica fora do provider: lê o shell. Dentro, quem pinta é o Prism. */
 body {
-  font-family: var(--font-display);
-  background: var(--bg);
-  color: var(--text);
+  font-family: 'Prism Inter', Inter, ui-sans-serif, system-ui, sans-serif;
+  background: var(--shell-bg);
+  color: var(--shell-text);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  transition: background-color var(--t-med), color var(--t-med);
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background:
-    radial-gradient(60% 46% at 50% -6%, var(--violet-glow), transparent 68%),
-    transparent;
-  opacity: 0.6;
 }
 
 ::selection {
-  background: var(--accent);
-  color: var(--accent-ink);
+  background: var(--selection);
 }
 
 :focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--focus-ring);
   outline-offset: 3px;
   border-radius: 4px;
 }
@@ -101,7 +88,7 @@ code,
   font-size: 0.72rem;
   letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--prism-primary-hover);
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -111,7 +98,7 @@ code,
   content: "";
   width: 22px;
   height: 1px;
-  background: var(--accent);
+  background: var(--prism-primary-hover);
 }
 
 .section-title {

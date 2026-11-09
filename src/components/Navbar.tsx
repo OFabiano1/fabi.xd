@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Button } from 'prism'
 import { Menu, Moon, Sun, Volume2, VolumeX, X } from 'lucide-react'
 import { useTheme } from '../hooks/useTheme.tsx'
 import { useScrollSpy } from '../hooks/useScrollSpy.ts'
@@ -79,9 +80,9 @@ export default function Navbar() {
           >
             {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
           </button>
-          <a href="#community" className="btn btn-primary nav-cta" onClick={close}>
-            axolotl br
-          </a>
+          <span className="nav-cta">
+            <Button href="#community" onClick={close} variant="secondary" size="sm" label="axolotl br" />
+          </span>
           <button
             className="nav-burger"
             aria-label="Abrir menu"

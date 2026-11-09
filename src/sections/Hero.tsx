@@ -1,4 +1,5 @@
 import { ArrowUpRight } from 'lucide-react'
+import { Button } from 'prism'
 import '../styles/hero.css'
 
 const base = import.meta.env.BASE_URL
@@ -55,12 +56,8 @@ export default function Hero() {
         </p>
 
         <div className="hero-actions anim-fade-up" style={{ '--d': '480ms' } as React.CSSProperties}>
-          <a href="#github" className="btn btn-primary">
-            explore projects <ArrowUpRight size={15} />
-          </a>
-          <a href="#about" className="btn btn-ghost">
-            about me <ArrowUpRight size={15} />
-          </a>
+          <Button href="#github" size="lg" label="explore projects" icon={ArrowUpRight} iconPosition="end" />
+          <Button href="#about" size="lg" variant="secondary" label="about me" />
         </div>
 
         <div className="hero-soc anim-fade-up" style={{ '--d': '560ms' } as React.CSSProperties}>

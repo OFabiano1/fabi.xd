@@ -37,7 +37,7 @@ export interface SpotifyTrack {
 
 export interface SpotifyData {
   isMocked: boolean
-  /** unix ms da última coleta; 0 = mock */
+  /** unix (segundos) da última coleta; 0 = mock */
   updated: number
   tracks: SpotifyTrack[]
 }

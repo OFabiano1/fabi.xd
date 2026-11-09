@@ -8,9 +8,9 @@ html.locked {
   z-index: 8000;
   display: grid;
   grid-template-rows: auto 1fr auto;
-  background: #06030c;
-  color: var(--text);
-  animation: lab-in 0.4s var(--ease) both;
+  background: var(--background);
+  color: var(--text-primary);
+  animation: lab-in 0.4s var(--ease-enter) both;
 }
 
 @keyframes lab-in {
@@ -27,14 +27,14 @@ html.locked {
   align-items: center;
   gap: 18px;
   padding: 14px clamp(16px, 3vw, 32px);
-  border-bottom: 1px solid rgba(150, 69, 244, 0.2);
+  border-bottom: 1px solid var(--prism-primary-border);
 }
 
 .lab-tag {
   font-size: 0.74rem;
   letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--prism-primary-hover);
   white-space: nowrap;
 }
 
@@ -48,23 +48,23 @@ html.locked {
 .lab-tab {
   padding: 8px 16px;
   border-radius: 999px;
-  border: 1px solid rgba(150, 69, 244, 0.25);
-  color: var(--text-soft);
+  border: 1px solid var(--prism-primary-border);
+  color: var(--text-secondary);
   font-size: 0.76rem;
   letter-spacing: 0.06em;
-  transition: color var(--t-fast), border-color var(--t-fast), background var(--t-fast);
+  transition: color var(--motion-fast) var(--ease-standard), border-color var(--motion-fast) var(--ease-standard), background var(--motion-fast) var(--ease-standard);
 }
 
 .lab-tab:hover {
-  color: var(--text);
-  border-color: var(--accent);
+  color: var(--text-primary);
+  border-color: var(--prism-primary-hover);
 }
 
 .lab-tab.active {
-  color: var(--accent-ink);
-  background: var(--accent);
-  border-color: var(--accent);
-  box-shadow: 0 0 24px -6px var(--violet-glow);
+  color: var(--prism-on-primary);
+  background: var(--prism-primary-hover);
+  border-color: var(--prism-primary-hover);
+  box-shadow: var(--shadow-2);
 }
 
 .lab-close {
@@ -73,15 +73,15 @@ html.locked {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 1px solid rgba(150, 69, 244, 0.3);
-  color: var(--text-soft);
-  transition: color var(--t-fast), border-color var(--t-fast), background var(--t-fast);
+  border: 1px solid var(--prism-primary-border);
+  color: var(--text-secondary);
+  transition: color var(--motion-fast) var(--ease-standard), border-color var(--motion-fast) var(--ease-standard), background var(--motion-fast) var(--ease-standard);
 }
 
 .lab-close:hover {
-  color: var(--text);
-  border-color: var(--accent);
-  background: rgba(150, 69, 244, 0.12);
+  color: var(--text-primary);
+  border-color: var(--prism-primary-hover);
+  background: var(--prism-primary-soft);
 }
 
 .lab-stage {
@@ -90,10 +90,7 @@ html.locked {
   place-items: center;
   padding: 24px;
   min-height: 0;
-  background:
-    radial-gradient(60% 50% at 50% 30%, rgba(150, 69, 244, 0.14), transparent 70%),
-    linear-gradient(rgba(150, 69, 244, 0.05) 1px, transparent 1px) 0 0 / 100% 54px,
-    linear-gradient(90deg, rgba(150, 69, 244, 0.05) 1px, transparent 1px) 0 0 / 54px 100%;
+  background: var(--surface);
 }
 
 .lab-foot {
@@ -102,7 +99,7 @@ html.locked {
   font-size: 0.68rem;
   letter-spacing: 0.18em;
   color: var(--text-muted);
-  border-top: 1px solid rgba(150, 69, 244, 0.16);
+  border-top: 1px solid var(--prism-primary-border);
 }
 
 /* ——— toys ——— */
@@ -118,9 +115,9 @@ html.locked {
   width: min(900px, calc(100vw - 48px));
   height: clamp(320px, 55vh, 520px);
   border-radius: var(--radius-lg);
-  border: 1px solid rgba(150, 69, 244, 0.3);
-  background: #05020a;
-  box-shadow: 0 30px 90px -30px rgba(90, 20, 180, 0.55);
+  border: 1px solid var(--prism-primary-border);
+  background: var(--background);
+  box-shadow: var(--shadow-2);
   touch-action: none;
 }
 
@@ -144,22 +141,22 @@ html.locked {
   gap: 8px;
   padding: 8px 14px;
   border-radius: 999px;
-  border: 1px solid rgba(150, 69, 244, 0.25);
-  color: var(--text-soft);
+  border: 1px solid var(--prism-primary-border);
+  color: var(--text-secondary);
   font-size: 0.74rem;
   letter-spacing: 0.06em;
-  transition: color var(--t-fast), border-color var(--t-fast), background var(--t-fast);
+  transition: color var(--motion-fast) var(--ease-standard), border-color var(--motion-fast) var(--ease-standard), background var(--motion-fast) var(--ease-standard);
 }
 
 button.lab-chip:hover {
-  color: var(--text);
-  border-color: var(--accent);
-  background: rgba(150, 69, 244, 0.1);
+  color: var(--text-primary);
+  border-color: var(--prism-primary-hover);
+  background: var(--prism-primary-soft);
 }
 
 .lab-chip.on {
-  color: var(--accent);
-  border-color: rgba(150, 69, 244, 0.5);
+  color: var(--prism-primary-hover);
+  border-color: var(--prism-primary-border);
 }
 
 .lab-caption {
@@ -194,26 +191,21 @@ button.lab-chip:hover {
   inset: 0;
   display: grid;
   place-items: center;
-  border: 1.5px solid rgba(150, 69, 244, 0.55);
+  border: 1.5px solid var(--prism-primary-border);
   border-radius: 14px;
-  background:
-    radial-gradient(80% 80% at 30% 20%, rgba(150, 69, 244, 0.16), transparent 60%),
-    #0a0616;
-  color: var(--text-soft);
+  background: var(--surface);
+  color: var(--text-secondary);
   font-size: 1.05rem;
   letter-spacing: 0.14em;
-  box-shadow: inset 0 0 40px rgba(150, 69, 244, 0.12);
+
   backface-visibility: visible;
 }
 
 .obj3d-face-ink {
-  background:
-    radial-gradient(120% 120% at 20% 10%, var(--accent-2) -40%, var(--accent) 30%, #150326 78%);
-  color: var(--accent-ink);
+  background: var(--prism-primary);
+  color: var(--prism-on-primary);
   font-weight: 700;
-  box-shadow:
-    inset 0 0 60px rgba(20, 2, 32, 0.6),
-    0 0 50px -8px var(--violet-glow);
+  box-shadow: var(--shadow-2);
 }
 
 .obj3d-face-ink::before {
@@ -222,7 +214,7 @@ button.lab-chip:hover {
 
 .obj3d-face-ink span {
   font-size: 1.5rem;
-  text-shadow: 0 2px 18px rgba(20, 2, 32, 0.55);
+
 }
 
 @media (max-width: 640px) {
