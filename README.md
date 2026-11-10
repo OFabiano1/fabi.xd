@@ -1,5 +1,4 @@
-AAAAAAAAAAAAAAAAAAA<<<<<<< HEAD
-# fabi.xd
+# hello world welcome to my site!
 
 Site pessoal / portfólio do **fabi** — developer & creator.
 Identidade visual própria, feita em React + TypeScript + Vite.
