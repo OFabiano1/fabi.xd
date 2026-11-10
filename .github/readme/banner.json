@@ -1,0 +1,9 @@
+{
+  "eyebrow": "fabi.xd · developer & creator",
+  "titulo": "fabi",
+  "lede": "meu canto na internet: quem eu sou, o que eu uso, o que tô ouvindo e o que ando construindo.",
+  "tags": ["react 18", "typescript", "vite 5", "prism"],
+  "motivo": "avatar",
+  "avatar": "../../public/assets/chibi.png",
+  "legenda": "fabi@papelpreto:~$"
+}
