@@ -31,7 +31,7 @@ export default function Lab() {
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && window.location.hash === '#lab') close()
+      if (e.key === 'Escape' && window.location.hash === '#lab') closeLab()
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
