@@ -9,8 +9,6 @@ export default function Stack() {
     <section id="stack" className="section">
       <div className="wrap">
         <SectionHeading
-          index="03"
-          tag="tech stack"
           title={
             <>
               The tools I <em>ship</em> with.

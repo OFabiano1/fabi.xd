@@ -12,13 +12,11 @@ export const marqueeTop = [
 ]
 
 export const marqueeBottom = [
-  { text: 'building things' },
-  { text: 'on the internet' },
+  { text: 'papel preto' },
+  { text: 'tinta roxa' },
   { text: 'fabi.xd', ghost: true },
-  { text: 'person empowered' },
   { text: '--version 5.0' },
-  { text: 'all systems go' },
   { text: 'axolotl' },
   { text: 'repeat' },
-  { text: 'internet favorite child', ghost: true },
+  { text: 'feito à mão', ghost: true },
 ]

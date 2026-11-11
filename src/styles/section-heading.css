@@ -9,52 +9,10 @@
   max-width: 18ch;
 }
 
+/* ênfase por cor, sem marca-texto */
 .section-title em {
-  position: relative;
   font-style: normal;
   color: var(--text-muted);
-  z-index: 0;
-}
-
-/* marca-texto roxo em cima da palavra */
-.section-title em::after {
-  content: "";
-  position: absolute;
-  left: -0.12em;
-  right: -0.1em;
-  top: 0.42em;
-  bottom: -0.06em;
-  z-index: -1;
-  background: var(--prism-primary-soft);
-  border-radius: 3px;
-  transform: skew(-6deg) rotate(-1deg);
-}
-
-.section-idx {
-  font-family: var(--font-mono);
-  font-size: 0.6rem;
-  color: var(--prism-primary-hover);
-  border: 1px solid var(--prism-primary-border);
-  border-radius: 5px;
-  padding: 3px 6px;
-  transform: rotate(-1.5deg);
-  transition: transform var(--motion-fast) var(--ease-standard), background var(--motion-fast) var(--ease-standard);
-}
-
-.section-idx:hover {
-  transform: rotate(1.5deg) scale(1.08);
-  background: var(--prism-primary-soft);
-}
-
-.section-tag {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  color: var(--prism-primary-hover);
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
 }
 
 .section-desc {

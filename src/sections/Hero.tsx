@@ -27,12 +27,8 @@ export default function Hero() {
         />
         <div className="hero-media-veil" />
       </div>
-      <div className="hero-grid-bg" aria-hidden="true" />
       <div className="wrap hero-inner">
         <div className="hero-badge anim-fade-up" style={{ '--d': '80ms' } as React.CSSProperties}>
-          <span className="dot r" />
-          <span className="dot g" />
-          <span className="dot b" />
           <span className="mono">fabi.xd/</span>
           <span className="hero-badge-on">online.</span>
           <span className="hero-badge-dash mono">/things</span>
@@ -47,12 +43,12 @@ export default function Hero() {
         </h1>
 
         <p className="hero-tagline anim-fade-up" style={{ '--d': '260ms' } as React.CSSProperties}>
-          <span className="hero-tag-strong">Building things</span> on the internet.
+          <span className="hero-tag-strong">Making things</span> for the internet.
         </p>
 
         <p className="hero-sub anim-fade-up" style={{ '--d': '360ms' } as React.CSSProperties}>
-          Developer, creator and curious mind. I explore the intersection of code,
-          design and technology, turning random ideas into projects.
+          Developer and creator. I write code, make interfaces, and turn loose ideas into
+          things that actually run.
         </p>
 
         <div className="hero-actions anim-fade-up" style={{ '--d': '480ms' } as React.CSSProperties}>

@@ -31,8 +31,6 @@ export default function Spotify() {
     <section id="spotify" className="section">
       <div className="wrap">
         <SectionHeading
-          index="04"
-          tag="currently listening"
           title={
             <>
               Tocando <em>enquanto codifica</em>.
@@ -44,9 +42,6 @@ export default function Spotify() {
           <Reveal className="spotify-side" delay={80}>
             <div className="spotify-card">
               <div className="spotify-card-bar">
-                <span className="dot r" aria-hidden="true" />
-                <span className="dot g" aria-hidden="true" />
-                <span className="dot b" aria-hidden="true" />
                 <span className="mono">spotify.recently</span>
               </div>
 

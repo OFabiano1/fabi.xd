@@ -15,7 +15,7 @@ export default function Footer() {
           <span className="footer-logo">
             fabi<span>.xd</span>
           </span>
-          <span className="footer-note">built with curiosity &amp; caffeine.</span>
+          <span className="footer-note">feito com café e teimosia.</span>
           <span className="footer-hint mono">
             existe mais aqui do que parece — ctrl + ` abre o terminal
           </span>

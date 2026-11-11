@@ -10,10 +10,6 @@ export default function Community() {
   return (
     <section id="community" className="community">
       <div className="wrap community-inner">
-        <Reveal>
-          <span className="community-tag mono">07 / community · axolotl br</span>
-        </Reveal>
-
         <Reveal delay={90}>
           <h2 className="community-title">
             AXOLOTL
@@ -53,7 +49,7 @@ export default function Community() {
 
         <Reveal delay={370}>
           <div className="community-foot mono">
-            &copy; 2020&ndash;2026 fabi &middot; made on the internet
+            &copy; 2020&ndash;2026 fabi
           </div>
         </Reveal>
       </div>

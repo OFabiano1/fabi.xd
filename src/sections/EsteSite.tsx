@@ -7,7 +7,6 @@ interface SiteBlock {
   code: string
   title: string
   text?: string
-  chips?: string[]
   list?: string[]
   repo?: string
   repoHref?: string
@@ -17,8 +16,7 @@ const madeOf: SiteBlock[] = [
   {
     code: '06.1',
     title: 'O projeto',
-    text: 'nascido para concentrar em um lugar só o universo do fabi: código, design, comunidade e experimentos. estética crua e direta — papel preto, tinta roxa, commands secretos no meio.',
-    chips: ['bilingue por fora', 'vibe de zine'],
+    text: 'um lugar só pras coisas que eu faço: código, design, comunidade e experimentos. papel preto, tinta roxa e uns commands escondidos no meio.',
   },
   {
     code: '06.2',
@@ -46,8 +44,6 @@ export default function EsteSite() {
     <section id="este-site" className="section">
       <div className="wrap">
         <SectionHeading
-          index="06"
-          tag="este site"
           title={
             <>
               Feito à mão, <em>no papel preto</em>.
@@ -62,16 +58,6 @@ export default function EsteSite() {
               <h3 className="site-block-title">{block.title}</h3>
 
               {block.text && <p className="site-text">{block.text}</p>}
-
-              {block.chips && (
-                <div className="site-chip-row">
-                  {block.chips.map((c) => (
-                    <span key={c} className="site-chip mono">
-                      {c}
-                    </span>
-                  ))}
-                </div>
-              )}
 
               {block.list && (
                 <ul className="site-list">
@@ -102,7 +88,7 @@ export default function EsteSite() {
         </div>
 
         <Reveal className="site-foot mono" delay={380}>
-          fabi.xd · feito com curiosidade, tinta roxa e café · código por cima do papel
+          fabi.xd · código por cima do papel preto
         </Reveal>
       </div>
     </section>

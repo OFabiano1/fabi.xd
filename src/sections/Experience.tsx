@@ -10,8 +10,6 @@ export default function Experience() {
     <section id="experience" className="section">
       <div className="wrap">
         <SectionHeading
-          index="02"
-          tag="experience"
           title={
             <>
               Onde eu <em>colo pra funcionar</em>.
