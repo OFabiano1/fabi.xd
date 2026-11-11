@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
   schedule:
-    - cron: '*/30 * * * *' # atualiza o "currently listening" sem commit
+    - cron: '0 12 * * *' # 1x por dia, 9h de Brasília; atualiza o "currently listening" sem commit
   workflow_dispatch:
 
 permissions:
